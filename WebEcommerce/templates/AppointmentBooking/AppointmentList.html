@@ -1,0 +1,86 @@
+{% extends 'webecommerce/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    table {
+      
+        width: 100%;
+    }
+    
+    td,th {
+        padding: 5px;
+        vertical-align: top;
+        text-align:justify
+    }
+    tr.hide-table-padding td {
+  padding: 0;
+}
+</style>
+    <main>
+        <div class="site-section">
+            <div class="bg-light" style="padding-top:1rem;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                 <div class="card-body table-responsive p-0">
+                                    <table class="table table-hover">
+                                          <thead>
+                                                <tr>
+                                                      <th>Practitioner</th>
+                                                      <th>Date</th>
+                                                      <th>Time</th>
+                                                      <th>Appointment Status</th>
+                                                </tr>
+                                          </thead>
+                                          <tbody>
+                                           {% for iter in Appointment_Details %}
+                                            <tr>
+                                                <td>{{ iter.2 }}</td>
+                                                <td>{{ iter.3 }}</td>
+                                                <td>{{ iter.4 }}-{{ iter.5 }}</td>
+                                                <td>{{ iter.1 }}</td>
+                                                <td>
+                                                    {% if iter.1 == 'Booked' %}
+                                                   <form action="{% url 'DeleteAppointment' iter.0 %}" method="post" class="d-inline">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="btn">
+                                                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                                                        </button>
+                                                   </form>
+                                                   {% endif %}
+                                                   {% if iter.6 %}
+                                                   <p class="btn btn-outline-success texte1 accordion-toggle collapsed" id="accordion{{ forloop.counter }}" data-toggle="collapse" data-parent="#accordion{{ forloop.counter }}" href="#collapse_{{ forloop.counter }}">
+                                                    View Recommendation
+                                                    </p>
+                                                    {% endif %}
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr class="hide-table-padding">
+                                                <td></td>
+                                                <td colspan="4">
+                                                    <div id="collapse_{{ forloop.counter }}" class="collapse in p-3">
+                                                    <div class="row">
+                                                        <div class="col-4" style="text-align: right;"><b>Diagnosis</b></div>
+                                                        <div class="col-8" style="text-align: justify;">{{ iter.6 }}</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4" style="text-align: right;"><b>Recommendation</b></div>
+                                                        <div class="col-8" style="text-align: justify;">{{ iter.7 }}</div>
+                                                    </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                          {% endfor %}
+                                          </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

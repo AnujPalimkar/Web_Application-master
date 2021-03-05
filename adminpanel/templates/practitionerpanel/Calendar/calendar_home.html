@@ -1,0 +1,716 @@
+{% extends 'practitionerpanel/Calendar/calendar.html' %}
+{% load slotrender%}
+{% block customer_content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css">
+<style>
+    .popper,
+.tooltip {
+  position: absolute;
+  z-index: 9999;
+  background: #1b1c41;
+  color: white;
+  min-width: 150px;
+  width: auto;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  padding: 10px;
+  text-align: center;
+}
+.style5 .tooltip {
+  color: #FFFFFF;
+  max-width: 200px;
+  width: auto;
+  font-size: .7rem;
+  padding: .5em 1em;
+}
+.popper .popper__arrow,
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 5px;
+}
+
+.tooltip .tooltip-arrow,
+.popper .popper__arrow {
+  border-color: #1b1c41;
+}
+.style5 .tooltip .tooltip-arrow {
+  border-color: #1b1c41;
+}
+.popper[x-placement^="top"],
+.tooltip[x-placement^="top"] {
+  margin-bottom: 5px;
+}
+.popper[x-placement^="top"] .popper__arrow,
+.tooltip[x-placement^="top"] .tooltip-arrow {
+  border-width: 5px 5px 0 5px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.popper[x-placement^="bottom"],
+.tooltip[x-placement^="bottom"] {
+  margin-top: 5px;
+}
+.tooltip[x-placement^="bottom"] .tooltip-arrow,
+.popper[x-placement^="bottom"] .popper__arrow {
+  border-width: 0 5px 5px 5px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.tooltip[x-placement^="right"],
+.popper[x-placement^="right"] {
+  margin-left: 5px;
+}
+.popper[x-placement^="right"] .popper__arrow,
+.tooltip[x-placement^="right"] .tooltip-arrow {
+  border-width: 5px 5px 5px 0;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+.popper[x-placement^="left"],
+.tooltip[x-placement^="left"] {
+  margin-right: 5px;
+}
+.popper[x-placement^="left"] .popper__arrow,
+.tooltip[x-placement^="left"] .tooltip-arrow {
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+.fc-timegrid-event-condensed .fc-event-title {
+    font-size: medium;
+}
+.fc-v-event .fc-event-title {
+    font-size: medium;
+    text-align: center;
+}
+
+.tooltip-inner {
+    min-width: 200px;
+    width: auto;
+    padding: .25rem .5rem;
+    color: #1b1c41;
+    text-align: center;
+    border-radius: .25rem;
+    background-color: #1b1c41;
+}
+.fc .fc-timegrid-slot {
+    /* height: 2em; */
+    border-bottom: 0;
+}
+h6{
+  color:white;
+}
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0;
+    padding:2;
+}
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+    background-color: white;
+}
+</style>
+<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/locales-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/locales-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js"></script>
+<script type="text/javascript">
+
+    var mydate = new Date();
+    mydate.setDate(mydate.getDate());
+    var minday = mydate.getDate();
+    var minmonth = ("0" + (mydate.getMonth() + 1)).slice(-2)
+    var minyear = mydate.getFullYear();
+    if(minday<10){
+        minday='0'+ minday;
+    }
+    var minfullDate = minyear + '-' + minmonth + '-' + minday;
+
+    var cal_id=[];
+    
+    var iv = localStorage.getItem("fcDefaultView") || 'timeGridWeek'
+    var id = localStorage.getItem("fcDefaultDate") || new Date()  
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: iv,
+                initialDate: id,
+                selectable: true,
+                //expandRows: true,
+                //aspectRatio: 2,
+                contentHeight: "auto",
+                allDaySlot: false,
+                // validRange: {
+                //     start: minfullDate,
+                //     end: maxfullDate
+                // },
+                selectAllow: function (e) {
+                  if(moment(e.start).format('YYYY-MM-DD') > minfullDate){
+                    if (e.end.getTime() / 1000 - e.start.getTime() / 1000 <= 86400) {
+                        return true;
+                    }
+                  }
+                },
+                dayCellDidMount: function (arg){
+                  if(minfullDate > moment(arg.date).format('YYYY-MM-DD')){
+                    arg.el.style.backgroundColor = '#F5F5F5';
+                  }
+                },
+
+                events: [
+                    {% for event in events %}
+                    {
+                    title: 'Available',
+                    start: '{{ event.4 }}',
+                    end: '{{ event.5 }}',
+                    id: '{{ event.0 }}',
+                    extendedProps: {
+                        description: 'This Slot is marked available by you.'
+                     },
+                    },
+                    {% endfor %}
+
+                    // {% for event2 in checkevent%}
+                    // {
+                    // title: '{{ event2.1 }}',
+                    // start: '{{ event2.6 }}',
+                    // end: '{{ event2.7 }}',
+                    // id: '{{ event2.0 }}',
+                    // },
+                    // {% endfor %}
+
+                    {% for eventsbooked in checkevent %}
+                    {
+                    title: '{{ eventsbooked.1 }}',
+                    start: '{{ eventsbooked.4 }}',
+                    end: '{{ eventsbooked.5 }}',
+                    id: '{{ eventsbooked.0 }}',
+                    extendedProps: {
+                        description: 'Appointment with {{ eventsbooked.3 }}',
+                        clientid: '{{ eventsbooked.2 }}',
+                        clientname: '{{ eventsbooked.3 }}',
+                     },
+                    },
+                    {% endfor %}
+                ],
+
+                displayEventTime:false,
+                // eventResizableFromStart: true,
+                // dragScroll: true,
+                    
+                views: {
+                    timeGridWeek: { 
+                        slotMinTime:'09:00:00',
+                        slotMaxTime:'21:00:00',
+                        slotDuration:'00:30:00',
+                    // other view-specific options here
+                    }
+                },
+                headerToolbar: {
+                    right: 'prev,next'
+                },
+                dateClick: function(info) {
+                    $(".fc-highlight").css("background", "green");
+                    
+                },
+                select: function(info) {
+                    $(".fc-highlight").css("background", "green");
+                    var startdate=moment(info.start).format('YYYY-MM-DD');
+                    confirmavailability(startdate,info.startStr,info.endStr);
+                    localStorage.setItem("fcDefaultView", info.view.type);
+                    
+                },
+                eventDidMount: function(arg) {
+                    if(arg.event.title=='Booked'){
+                        arg.el.style.backgroundColor = 'blue'
+                        eventdate1=moment(arg.event.startStr).format();
+                        checkeddate1=moment().format();
+                        if(eventdate1>checkeddate1){
+                            var tooltip = new Tooltip(arg.el, {
+                            title: "<form method='get' onsubmit='functioncancel("+arg.event.id+")' class='d-inline'><h6>"+arg.event.extendedProps.description+"</h6><button type='submit' class='btn btn-outline-success d-inline' value='Delete'>Cancel Appointment</button></form><br><br><div style='text-align:centre'><button class='btn btn-outline-success d-inline' value='Reschedule' onclick='reschedule("+arg.event.id+","+arg.event.extendedProps.clientid+")'>Reschedule Appointment</button><br><br><button class='btn btn-outline-success d-inline' value='Reschedule' onclick='recommendation("+arg.event.id+","+arg.event.extendedProps.clientid+")'>Give Recommendation</button></div>",
+                            placement: 'right',
+                            trigger: 'hover',
+                            container: 'body',
+                            html: true,
+                            delay:{
+                              hide: 200,
+                            },
+                        });
+                        }
+                    }
+                    else if (arg.event.title=='Available'){
+                        arg.el.style.backgroundColor='green'
+                        eventdate1=moment(arg.event.startStr).format();
+                        checkeddate1=moment().format();
+                        if(eventdate1>checkeddate1){
+                            var tooltip = new Tooltip(arg.el, {
+                              title: "<form method='get' onsubmit='functiondelete("+arg.event.id+")' class='d-inline'><h6>"+arg.event.extendedProps.description+"</h6><button type='submit' class='btn btn-outline-success d-inline' value='Delete'>Mark Unavailable</button></form>",
+                              placement: 'right',
+                              trigger: 'hover',
+                              container: 'body',
+                              html: true
+                          });
+                        }
+                    }
+                    arg.event.setProp('display','block');
+                },
+                dayHeaderContent: (args) => {
+                    return moment(args.date).format('dddd D/M')
+                }
+            });
+
+            calendar.render();
+            calendar.getEvents().map(function(event) { 
+              if(event.title=='Booked'){
+                cal_id.push({title1:event.title,eventstart:event.startStr,eventend:event.endStr});
+              }
+              return true;
+            });
+        });
+
+    function functiondelete(id){
+        if (confirm("Are you sure you want to mark this as unavailable?")) {
+        var id = id;
+        $.ajax({
+            type: "POST",
+            url: "{% url 'calendar_unavailable'%}",
+            data: {'id': id, csrfmiddlewaretoken: '{{ csrf_token }}'},
+            async: false
+        });
+        }
+    }
+
+    function functioncancel(id){
+        if (confirm("Are you sure you want to Cancel the appointment?")) {
+        var id = id;
+        $.ajax({
+            type: "POST",
+            url: "{% url 'calendar_cancelAppointment'%}",
+            data: {'id': id, csrfmiddlewaretoken: '{{ csrf_token }}'},
+            async: false
+        });
+        }
+    }
+
+    function recommendation(arg1, arg2) {
+        document.getElementById('recommendation_slot_id').value=arg1;
+        document.getElementById('recommendation_client_id').value=arg2;
+        $('#recommendationmodal').modal('show');
+    }
+
+    function reschedule(id,clientid){
+        document.getElementById('reschedule_slot_id').value=id;
+        document.getElementById('reschedule_client_id').value=clientid;
+        var myDatePicker = document.getElementById('reschedule_date1');
+        myDatePicker.setAttribute('min', minfullDate);
+        $('#reschedulemodal').modal('show');
+    }
+
+    function confirmavailability(date1value,startStrvalue,endStrvalue){
+        localStorage.setItem("fcDefaultDate", startStrvalue);
+        document.getElementById('date1').value=date1value;
+        document.getElementById('slotstarttime').value=startStrvalue;
+        document.getElementById('slotendtime').value=endStrvalue;
+        $('#exampleModalCenter').modal('show');
+    }
+
+    function viewHistory(){
+      var viewHistory_clientid=document.getElementById('recommendation_client_id').value;
+      console.log(viewHistory_clientid);
+      $.ajax({
+            type: "POST",
+            url: "{% url 'calendar_viewHistory'%}",
+            data: {'id': viewHistory_clientid,csrfmiddlewaretoken: '{{ csrf_token }}'},
+            async: false,
+            success: function(data){
+              console.log(data)
+                $('#viewHistorycontent').html(data);
+            }
+        });
+      $('#historymodal').modal('show');
+    }
+
+    function checkSlot(){
+      console.log(cal_id);
+      var flag=0;
+      var selectedDate=document.getElementById('reschedule_date1').value;
+      var selectedstart=document.getElementById('reschedule_start_slot').value;
+      var selectedend=document.getElementById('reschedule_end_slot').value;
+      startTimeStr=selectedDate+'T'+selectedstart+':00Z';
+      endTimeStr=selectedDate+'T'+selectedend+':00Z';
+      selectstartmoment=moment(startTimeStr).format();
+      selectendmoment=moment(endTimeStr).format();
+      console.log(selectstartmoment);
+      console.log(selectendmoment);
+      for(i=0;i<cal_id.length;i++){
+          var timecheckstart=moment(cal_id[i].eventstart).format();
+          var timecheckend=moment(cal_id[i].eventend).format();
+          if(moment(timecheckstart).isBetween(selectstartmoment,selectendmoment,undefined,[])){
+              flag=1;
+              break;
+          }
+          else if(moment(selectstartmoment).isBetween(timecheckstart,timecheckend,undefined,[])){
+              flag=1;
+              break;
+          }
+          else{
+            flag=0;
+          }
+      }
+      console.log(flag);
+      if (flag==1) {
+        alert('The selected slot is already booked');
+        return false;  
+      }
+      else{
+        return true;
+      }
+    }
+
+</script>
+        <!--Accordion wrapper-->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Availability</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you wish to confirm your availability?
+      </div>
+    <form method="post" autocomplete="off" id="myform" name="myform" action="calendar_addAvailability">
+        {% csrf_token %}
+        <div class="card-body">
+                <div class="row" style="display:none">
+                    <div class="col-md-6">
+                        <div id="div_selectDate" class="form-group  align-middle">
+                            <label for="slot_date" class="col-form-label  requiredField">
+                                Select Date<span class="asteriskField">*</span>
+                            </label>
+                        <div class="">
+                            <input type="date" name="slot_date" class="textinput textInput form-control" id="date1" readonly>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="text-align: center;" id="timeslot">
+                        <div id="div_selectSlot" class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="slot_booking" class="col-form-label  requiredField">
+                                        Select Available Time Slots<span class="asteriskField">*</span>
+                                    </label>
+                                    <input type="text" id="slotstarttime"class="textinput textInput form-control" name="slotstarttime" readonly>
+                                    <input type="text" id="slotendtime" class="textinput textInput form-control" name="slotendtime" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Yes. Mark Available</button>
+                </div>
+            </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="reschedulemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Reschedule Appointment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Select Date to Reschedule
+        </div>
+      <form method="post" autocomplete="off" id="rescheduleform" name="rescheduleform" action="{% url 'calendar_rescheduleAppointment' %}" onsubmit="return checkSlot()">
+          {% csrf_token %}
+          <div class="card-body">
+            <div class="row" style="display: none;">
+              <div class="col-md-12">
+                  <div id="div_selectid" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4 offset-sm-1">
+                        <label for="reschedule_slot_id" class="col-form-label  requiredField">
+                          Appointment Slot<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-5">
+                        <input type="text" name="reschedule_slot_id" class="textinput textInput form-control" id="reschedule_slot_id" required>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="display: none;">
+            <div class="col-md-12">
+                <div id="div_clientid" class="form-group  align-middle">
+                  <div class="row">
+                    <div class="col-sm-4 offset-sm-1">
+                      <label for="reschedule_client_id" class="col-form-label  requiredField">
+                        Client Id<span class="asteriskField">*</span>
+                      </label>
+                    </div>
+                    <div class="col-sm-5">
+                      <input type="text" name="reschedule_client_id" class="textinput textInput form-control" id="reschedule_client_id" required>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div id="div_selectDate" class="form-group  align-middle">
+                            <div class="row">
+                              <div class="col-sm-4 offset-sm-1">
+                                <label for="reschedule_slot_date" class="col-form-label  requiredField">
+                                  Select Date<span class="asteriskField">*</span>
+                                </label>
+                              </div>
+                              <div class="col-sm-5">
+                                <input type="date" name="reschedule_slot_date" class="textinput textInput form-control" id="reschedule_date1" min="" max="" required>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="div_selectstarttime" class="form-group  align-middle">
+                        <div class="row">
+                          <div class="col-sm-4 offset-sm-1">
+                            <label for="reschedule_start_slot" class="col-form-label  requiredField">
+                              Select Start Time<span class="asteriskField">*</span>
+                            </label>
+                          </div>
+                          <div class="col-sm-5">
+                            <select name="reschedule_start_slot" class="textinput textInput form-control" id="reschedule_start_slot" onchange="selectEndTimeSlot()" required>
+                                <option disbaled>---Select Start---</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="div_selectendtime" class="form-group  align-middle">
+                        <div class="row">
+                          <div class="col-sm-4 offset-sm-1">
+                            <label for="reschedule_end_slot" class="col-form-label  requiredField">
+                              Select End Time<span class="asteriskField">*</span>
+                            </label>
+                          </div>
+                          <div class="col-sm-5">
+                            <select name="reschedule_end_slot" class="textinput textInput form-control" id="reschedule_end_slot" required>
+                              <option disabled>---Select End---</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                   
+                    
+                  
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Reschedule</button>
+                  </div>
+              </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="recommendationmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Give Recommendation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <form method="post" autocomplete="off" id="recommendationform" name="recommendationform" action="{% url 'calendar_giveRecommendation' %}">
+          {% csrf_token %}
+          <div class="card-body">
+            <div class="row" style="display: none;">
+              <div class="col-md-12">
+                  <div id="recommendation_appid" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4 offset-sm-1">
+                        <label for="recommendation_slot_id" class="col-form-label  requiredField">
+                          Appointment Slot<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-5">
+                        <input type="text" name="recommendation_slot_id" class="textinput textInput form-control" id="recommendation_slot_id" required>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row" style="display: none;">
+              <div class="col-md-12">
+                  <div id="recommendation_clientid" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4 offset-sm-1">
+                        <label for="recommendation_client_id" class="col-form-label  requiredField">
+                          Client Id<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-5">
+                        <input type="text" name="recommendation_client_id" class="textinput textInput form-control" id="recommendation_client_id" required>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                  <div id="recommendation_diagnosis" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label for="recommendation_diagnosis" class="col-form-label  requiredField">
+                          Diagnosis<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-8">
+                        <textarea rows="6" name="recommendation_diagnosis" class="textinput textInput form-control" id="recommendation_diagnosis" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                  <div id="recommendation_dietplan" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label for="recommendation_dietplan" class="col-form-label  requiredField">
+                          Recommendation<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-8">
+                        <textarea rows="6" name="recommendation_dietplan" class="textinput textInput form-control" id="recommendation_dietplan" required></textarea>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" onclick="viewHistory()">view History</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="historymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Appointment History</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="viewHistorycontent"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+      <!-- Accordion card -->
+      <div class="card">
+        
+        <div id='calendar' name='calendar'></div>
+      </div>
+    </div>
+
+
+  <script>
+    var optionList1 = document.getElementById('reschedule_start_slot'); 
+    let optionsvalue = [];
+    let allTimes=[];
+    let x = {
+      slotInterval: 30,
+      openTime: '9:00',
+      closeTime: '21:00'
+    };
+    let startTime = moment(x.openTime, "HH:mm"); 
+    let endTime = moment(x.closeTime, "HH:mm");
+    while (startTime < endTime) {
+      allTimes.push(startTime.format("HH:mm")); 
+      startTime.add(x.slotInterval, 'minutes');
+    }
+
+    allTimes.forEach(alltime =>
+      optionsvalue.push({"text":alltime,"value":alltime})
+    );
+
+    for(i=0;i<optionsvalue.length;i++){
+      var a= new Option(optionsvalue[i].text,optionsvalue[i].value);
+      optionList1.options.add(a);      
+    }
+
+    function selectEndTimeSlot(){
+        var selectedslot=document.getElementById('reschedule_start_slot');
+        var endslotselect=document.getElementById('reschedule_end_slot');
+        var L=endslotselect.options.length;
+        while(endslotselect.length > 1){
+          endslotselect.options[1].remove();
+        }
+        for(i=0;i<optionsvalue.length;i++){
+          if(selectedslot.value<optionsvalue[i].value){
+            var b= new Option(optionsvalue[i].text,optionsvalue[i].value);
+            endslotselect.options.add(b);
+          }    
+        }
+    }
+  </script>
+{% endblock customer_content %}

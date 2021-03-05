@@ -1,0 +1,114 @@
+{% extends 'practitionerpanel/Calendar/calendar.html' %}
+{% load slotrender%}
+{% block customer_content %}
+
+<form method="post" autocomplete="off" id="myform" name="myform">
+    {% csrf_token %}
+    <br>
+        <!--Accordion wrapper-->
+    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+      <!-- Accordion card -->
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header" role="tab" id="headingOne1">
+          <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+            aria-controls="collapseOne1">
+            <h5 class="mb-0">
+              My Calendar<i class="fas fa-angle-down rotate-icon"></i>
+            </h5>
+          </a>
+        </div>
+        <!-- Card body -->
+        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+          data-parent="#accordionEx">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="div_selectDate" class="form-group  align-middle">
+                            <label for="slot_date" class="col-form-label  requiredField">
+                                Select Date<span class="asteriskField">*</span>
+                            </label>
+                        <div class="">
+                            <input type="date" name="slot_date" class="textinput textInput form-control" required="" id="date1" min="" max="" onchange="myFunction()">
+                           </div>
+                        </div>
+                        <!-- <input type="text" value="{{ request.user.id }}"> -->
+                    </div>
+                    <div class="col-md-6" style="text-align: center; display:none" id="timeslot">
+                        <div id="div_selectSlot" class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="slot_booking" class="col-form-label  requiredField">
+                                        Select Available Time Slots<span class="asteriskField">*</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {% for slotid in confirmAvailability1 %}
+                                    
+                                    <label for="slot_time1" class="col-form-label  requiredField">
+                                        {{ slotid.1 }} - {{ slotid.2 }}
+                                    </label>
+                                    <input type="checkbox" id="slot_time1" name="slot_time[]" value= "{{ slotid.0 }}"><br>
+                                    {%  endfor %}   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='calendar' name='calendar'></div>
+      </div>
+      <div class="row">
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success btn-lg btn-border"> <i class="fas fa-save"></i> Save </button>
+            </div>
+        </div>
+    </div>
+<!-- Accordion wrapper -->
+</form>
+<script type="text/javascript">
+
+    var getday="{{ events.0 }}";
+    var getendtime="{{ events.0.4 }}";
+    console.log(getendtime);
+    var mydate = new Date();
+    console.log(mydate);
+
+    mydate.setDate(mydate.getDate()+14);
+    var minday = mydate.getDate();
+    var minmonth = ("0" + (mydate.getMonth() + 1)).slice(-2)
+    var minyear = mydate.getFullYear();
+    if(minday<10){
+        minday='0'+ minday;
+    }
+    var minfullDate = minyear + '-' + minmonth + '-' + minday;
+    console.log(minfullDate);
+
+    mydate.setDate(mydate.getDate()+14);
+    var maxday = mydate.getDate();
+    var maxmonth = ("0" + (mydate.getMonth() + 1)).slice(-2)
+    var maxyear = mydate.getFullYear();
+    if(maxday<10){
+        maxday='0'+ maxday;
+    } 
+    var maxfullDate = maxyear + '-' + maxmonth + '-' + maxday;
+    console.log(maxfullDate);
+
+    var myDatePicker = document.getElementById('date1');
+    myDatePicker.setAttribute('min', minfullDate);
+    myDatePicker.setAttribute('max', maxfullDate);
+
+
+
+    function myFunction() {
+        document.getElementById("timeslot").style.display="block";
+    }
+
+</script>
+{% endblock customer_content %}

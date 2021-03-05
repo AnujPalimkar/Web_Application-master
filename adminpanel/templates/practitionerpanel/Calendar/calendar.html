@@ -1,0 +1,16 @@
+{% extends 'practitionerpanel/dashboard.html' %}
+{% load static %}
+
+{% block main_content %}
+    <div class="container">
+        <div class="row row-class" style="padding:0">
+
+            <div class="main-content" style="padding:0">
+
+                {% block customer_content %}
+
+                {% endblock customer_content %}
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

@@ -1,0 +1,181 @@
+{% extends 'practitionerpanel/dashboard.html' %}
+{% load static %}
+
+{% block main_content %}
+<style>
+    table {
+      
+        width: 100%;
+    }
+    
+    td,th {
+        padding: 5px;
+        vertical-align: top;
+        text-align:justify
+    }
+    tr.hide-table-padding td {
+  padding: 0;
+}
+</style>
+<br>
+<div class="container">
+    <div class="row row-class">
+        <div>
+            <h3 class="display-5">Appointment History</h3>
+        </div>
+
+        <div class="main-content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                         <div class="card-body table-responsive p-0">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                          <th>Client</th>
+                                          <th>Date</th>
+                                          <th>Time</th>
+                                          <th></th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                               {% for iter in eventbooked %}
+                                <tr>
+                                    <td>{{ iter.2 }}</td>
+                                    <td>{{ iter.3 }}</td>
+                                    <td>{{ iter.4 }}-{{ iter.5 }}</td>
+                                    <td>
+                                       <p class="btn btn-outline-success texte1 accordion-toggle collapsed" id="accordion{{ forloop.counter }}" data-toggle="collapse" data-parent="#accordion{{ forloop.counter }}" href="#collapse_{{ forloop.counter }}">
+                                        View Recommendation
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="hide-table-padding">
+                                    <td colspan="4">
+                                        <div id="collapse_{{ forloop.counter }}" class="collapse in p-3">
+                                        <div class="row">
+                                            <div class="col-sm-2 offset-10">
+                                                <button title="Edit Recommendation" class="btn text-secondary px-0" onclick="recommendation('{{ iter.9 }}','{{ iter.8 }}','{{ iter.6 }}','{{ iter.7 }}')">
+                                                    <i class="far fa-edit fa-lg"></i>
+                                                    Edit
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4" style="text-align: right;"><b>Diagnosis</b></div>
+                                            <div class="col-8" style="text-align: justify;">{{ iter.6 }}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4" style="text-align: right;"><b>Recommendation</b></div>
+                                            <div class="col-8" style="text-align: justify;">{{ iter.7 }}</div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="recommendationmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Update Recommendation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <form method="post" autocomplete="off" id="recommendationform" name="recommendationform" action="{% url 'updateRecommendation' %}">
+          {% csrf_token %}
+          <div class="card-body">
+            <div class="row" style="display: none;">
+              <div class="col-md-12">
+                  <div id="recommendation_appid" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4 offset-sm-1">
+                        <label for="recommendation_slot_id" class="col-form-label  requiredField">
+                          Appointment Slot<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-5">
+                        <input type="text" name="recommendation_slot_id" class="textinput textInput form-control" id="recommendation_slot_id" required readonly>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row" style="display: none;">
+              <div class="col-md-12">
+                  <div id="recommendation_clientid" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4 offset-sm-1">
+                        <label for="recommendation_client_id" class="col-form-label  requiredField">
+                          Client Id<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-5">
+                        <input type="text" name="recommendation_client_id" class="textinput textInput form-control" id="recommendation_client_id" required readonly>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                  <div id="recommendation_diagnosis" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label for="recommendation_diagnosis" class="col-form-label  requiredField">
+                          Diagnosis<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-8">
+                        <textarea rows="6" name="recommendation_diagnosis" class="textinput textInput form-control" id="recommendation_diagnosis1" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                  <div id="recommendation_dietplan" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label for="recommendation_dietplan" class="col-form-label  requiredField">
+                          Recommendation<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-8">
+                        <textarea rows="6" name="recommendation_dietplan" class="textinput textInput form-control" id="recommendation_dietplan1" required></textarea>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% block confirmation%}
+  {% endblock confirmation %}
+  <script>
+      function recommendation(arg1, arg2, arg3, arg4) {
+        document.getElementById('recommendation_slot_id').value=arg1;
+        document.getElementById('recommendation_client_id').value=arg2;
+        document.getElementById('recommendation_diagnosis1').value=arg3;
+        document.getElementById('recommendation_dietplan1').value=arg4;
+        $('#recommendationmodal').modal('show');
+    }
+  </script>
+{% endblock main_content %}

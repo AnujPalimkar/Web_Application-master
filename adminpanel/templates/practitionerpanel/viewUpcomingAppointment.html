@@ -1,0 +1,198 @@
+{% extends 'practitionerpanel/dashboard.html' %}
+{% load static %}
+
+{% block main_content %}
+<br>
+<div class="container">
+    <div class="row row-class">
+        <div>
+            <h3 class="display-5">Upcoming Appointments</h3>
+        </div>
+
+        <div class="main-content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                         <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                          <th>Client</th>
+                                          <th>Date</th>
+                                          <th>Start Time</th>
+                                          <th>End Time</th>
+                                          <th></th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                {% for custum in eventbooked %}
+                                    <tr>
+                                        <td>{{ custum.3 }}</td>
+                                        <td>{{ custum.6 }}</td>
+                                        <td>{{ custum.7 }}</td>
+                                        <td>{{ custum.8 }}</td>
+                                        <td>
+                                            <form action="#" method="post" class="d-inline">
+                                                {% csrf_token %}
+                                                <button title="Cancel Appointment" type="submit" class="btn">
+                                                    <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                                                </button>
+                                           </form>
+                                            <button title="Reschedule Appointment" class="btn text-secondary px-0" onclick="reschedule('{{ custum.0 }}','{{ custum.2 }}')">
+                                                <i class="far fa-edit fa-lg"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="reschedulemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Reschedule Appointment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Select Date to Reschedule
+        </div>
+      <form method="post" autocomplete="off" id="rescheduleform" name="rescheduleform" action="{% url 'calendar_rescheduleAppointment' %}">
+          {% csrf_token %}
+          <div class="card-body">
+            <div class="row"  style="display: none;">
+              <div class="col-md-12">
+                  <div id="div_selectid" class="form-group  align-middle">
+                    <div class="row">
+                      <div class="col-sm-4 offset-sm-1">
+                        <label for="reschedule_slot_id" class="col-form-label  requiredField">
+                          Appointment Slot<span class="asteriskField">*</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-5">
+                        <input type="text" name="reschedule_slot_id" class="textinput textInput form-control" id="reschedule_slot_id" required>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div id="div_clientid" class="form-group  align-middle">
+                  <div class="row"  style="display: none;">
+                    <div class="col-sm-4 offset-sm-1">
+                      <label for="reschedule_client_id" class="col-form-label  requiredField">
+                        Client Id<span class="asteriskField">*</span>
+                      </label>
+                    </div>
+                    <div class="col-sm-5">
+                      <input type="text" name="reschedule_client_id" class="textinput textInput form-control" id="reschedule_client_id" required>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+                  <div class="row" >
+                      <div class="col-md-12">
+                          <div id="div_selectDate" class="form-group  align-middle">
+                            <div class="row">
+                              <div class="col-sm-4 offset-sm-1">
+                                <label for="reschedule_slot_date" class="col-form-label  requiredField">
+                                  Select Date<span class="asteriskField">*</span>
+                                </label>
+                              </div>
+                              <div class="col-sm-5">
+                                <input type="date" name="reschedule_slot_date" class="textinput textInput form-control" id="reschedule_date1" min="" max="" required>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="div_selectstarttime" class="form-group  align-middle">
+                        <div class="row">
+                          <div class="col-sm-4 offset-sm-1">
+                            <label for="reschedule_start_slot" class="col-form-label  requiredField">
+                              Select Start Time<span class="asteriskField">*</span>
+                            </label>
+                          </div>
+                          <div class="col-sm-5">
+                            <select name="reschedule_start_slot" class="textinput textInput form-control" id="reschedule_start_slot" onchange="selectEndTimeSlot()" required>
+                                <option disbaled>---Select Start---</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="div_selectendtime" class="form-group  align-middle">
+                        <div class="row">
+                          <div class="col-sm-4 offset-sm-1">
+                            <label for="reschedule_end_slot" class="col-form-label  requiredField">
+                              Select End Time<span class="asteriskField">*</span>
+                            </label>
+                          </div>
+                          <div class="col-sm-5">
+                            <select name="reschedule_end_slot" class="textinput textInput form-control" id="reschedule_end_slot" required>
+                              <option disabled>---Select End---</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <!-- <div class="col-md-12">
+                    <div id="div_selectDate" class="form-group  align-middle">
+                        <label for="reschedule_slot_date" class="col-form-label  requiredField">
+                            Select Date<span class="asteriskField">*</span>
+                        </label>
+                      <div class="">
+                        <input type="date" name="reschedule_slot_date" class="textinput textInput form-control" id="reschedule_date1" min="" max="">
+                       </div>
+                    </div>
+                    </div> -->
+                  </div>
+                      
+                    
+                  
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Reschedule</button>
+                  </div>
+              </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <script>
+      var mydate = new Date();
+    mydate.setDate(mydate.getDate());
+    var minday = mydate.getDate();
+    var minmonth = ("0" + (mydate.getMonth() + 1)).slice(-2)
+    var minyear = mydate.getFullYear();
+    if(minday<10){
+        minday='0'+ minday;
+    }
+    var minfullDate = minyear + '-' + minmonth + '-' + minday;
+      function reschedule(id,clientid){
+      console.log(id+'  '+clientid);
+        document.getElementById('reschedule_slot_id').value=id;
+        document.getElementById('reschedule_client_id').value=clientid;
+        var myDatePicker = document.getElementById('reschedule_date1');
+        myDatePicker.setAttribute('min', minfullDate);
+        $('#reschedulemodal').modal('show');
+    }
+  </script>
+{% endblock main_content %}

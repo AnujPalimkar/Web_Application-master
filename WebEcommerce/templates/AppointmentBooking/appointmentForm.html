@@ -1,0 +1,500 @@
+{% extends 'AppointmentBooking/base.html' %}
+{% load static %}
+    {% block content %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css">
+<style>
+    .popper,
+.tooltip {
+  position: absolute;
+  z-index: 9999;
+  background: #1b1c41;
+  color: white;
+  min-width: 150px;
+  width: auto;
+  border-radius: 3px;
+  box-shadow: 0 0 2px #1b1c41;
+  padding: 10px;
+  text-align: center;
+}
+.style5 .tooltip {
+  color: #FFFFFF;
+  max-width: 250px;
+  width: auto;
+  font-size: .6rem;
+  padding: .5em 1em;
+}
+.popper .popper__arrow,
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 5px;
+}
+
+.tooltip .tooltip-arrow,
+.popper .popper__arrow {
+  border-color: #1b1c41;
+}
+.style5 .tooltip .tooltip-arrow {
+  border-color: #1b1c41;
+}
+.popper[x-placement^="top"],
+.tooltip[x-placement^="top"] {
+  margin-bottom: 5px;
+}
+.popper[x-placement^="top"] .popper__arrow,
+.tooltip[x-placement^="top"] .tooltip-arrow {
+  border-width: 5px 5px 0 5px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.popper[x-placement^="bottom"],
+.tooltip[x-placement^="bottom"] {
+  margin-top: 5px;
+}
+.tooltip[x-placement^="bottom"] .tooltip-arrow,
+.popper[x-placement^="bottom"] .popper__arrow {
+  border-width: 0 5px 5px 5px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.tooltip[x-placement^="right"],
+.popper[x-placement^="right"] {
+  margin-left: 5px;
+}
+.popper[x-placement^="right"] .popper__arrow,
+.tooltip[x-placement^="right"] .tooltip-arrow {
+  border-width: 5px 5px 5px 0;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+.popper[x-placement^="left"],
+.tooltip[x-placement^="left"] {
+  margin-right: 5px;
+}
+.popper[x-placement^="left"] .popper__arrow,
+.tooltip[x-placement^="left"] .tooltip-arrow {
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+.fc-timegrid-event-condensed .fc-event-title {
+    font-size: medium;
+}
+.fc-v-event .fc-event-title {
+    font-size: medium;
+    text-align: center;
+}
+
+.tooltip-inner {
+    min-width: 200px;
+    width: auto;
+    padding: .25rem .5rem;
+    color: #1b1c41;
+    text-align: center;
+    border-radius: .25rem;
+    background-color: #1b1c41;
+}
+.fc .fc-timegrid-slot {
+    height: 2em;
+    border-bottom: 0;
+}
+.fc .fc-bg-event {
+    text-align: center;
+    background: var(--fc-bg-event-color,#8fdf82);
+    opacity: .3;
+    opacity: var(--fc-bg-event-opacity,1);
+    color: white;
+}
+.fc .fc-widget-content {
+    background-color: black;
+}
+.fc-timegrid-slot-lane{
+    background-color:#F5F5F5;
+    border:2px solid;
+}
+.fc-direction-ltr .fc-timegrid-col-events {
+    /* margin: 0 2.5% 0 2px; */
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.fc-v-event .fc-event-title {
+    font-size: small;
+    text-align: center;
+    /* vertical-align: middle; */
+}
+h6{
+  color:white;
+}
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0;
+    padding:5;
+}
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+    background-color: white;
+}
+
+</style>
+<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/locales-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/locales-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js"></script>
+<script type="text/javascript">
+
+        function initcalendar(data1,data2,practitionerName,practitionerid) {  
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'timeGridWeek',
+                selectable: true,
+                expandRows: true,
+                aspectRatio: 2,
+                contentHeight: "auto",
+                allDaySlot: false,
+
+                /*validRange: {
+                    start: minfullDate,
+                    end: maxfullDate
+                },*/
+                selectAllow: function (e) {
+                    var a=0
+                    var aList=[];
+                    var selectedStartDate=e.start.toISOString().replace('Z', '').slice(0,-4);
+                    var selectedEndDate=e.end.toISOString().replace('Z', '').slice(0,-4);
+                    var slottimes=[];
+                    while(selectedStartDate<selectedEndDate){
+                        var a=moment(selectedStartDate);
+                        var b=moment(selectedStartDate).add(30,'minutes');
+                        slottimes.push({'starttime':a,'endtime':b})
+                        var selectedstartTime=a.toISOString().replace('Z', '').slice(0,-4);
+                        var selectedendTime=b.toISOString().replace('Z', '').slice(0,-4);
+                        for(i=0;i<data1.length;i++){
+                            if(selectedstartTime>=data1[i].start && selectedendTime<=data1[i].end){
+                                a=1;
+                                break;
+                            }
+                            else{
+                                a=0;
+                            }
+                        }
+                        selectedStartDate= b.toISOString().replace('Z', '').slice(0,-4); 
+                        aList.push(a);
+                    }
+                    if(!aList.includes(0)){
+                        return true;
+                    }
+                },
+                eventSources: [
+                    data1,
+                    data2
+                ],
+
+                displayEventTime:false,
+                    
+                views: {
+                    timeGridWeek: { 
+                        slotMinTime:'09:00:00',
+                        slotMaxTime:'21:00:00',
+                        slotDuration:'00:30:00',
+                    // other view-specific options here
+                    }
+                },
+                headerToolbar: {
+                    right: 'prev,next'
+                },
+                dateClick: function(info) {
+                    $(".fc-highlight").css("background", "green");
+                    
+                },
+                select: function(info) {
+                    $(".fc-highlight").css("background", "green");
+                    // confirm(info.startStr+'and '+info.endStr);
+                    
+                    var startdate=moment(info.start).format('YYYY-MM-DD');
+                    confirmAppointment(practitionerid,practitionerName,startdate,info.startStr,info.endStr);
+                    // localStorage.setItem("fcDefaultView", info.view.type);
+                    // localStorage.setItem("fcDefaultDate", info.startStr);
+                    
+                },
+                eventDidMount: function(arg) {
+                    if(arg.event.title=='Booked'){
+                        arg.el.style.backgroundColor = 'blue'
+                        var tooltip = new Tooltip(arg.el, {
+                        title: "<form method='get' onsubmit='functioncancel("+arg.event.id+")' class='d-inline'><h6>Appointment Booked with "+practitionerName+"</h6><button type='submit' class='btn btn-outline-success d-inline' value='Delete' style='font-size:small'>Cancel Appointment</button></form>",
+                        placement: 'right',
+                        trigger: 'hover',
+                        container: 'body',
+                        html: true
+                    });
+                    }
+                    else if (arg.event.title=='Available'){
+                        arg.el.style.backgroundColor='green'
+                    //     var tooltip = new Tooltip(arg.el, {
+                    //     title: "<form method='get' onsubmit='functiondelete("+arg.event.id+")' class='d-inline'><h6>"+arg.event.extendedProps.description+"</h6><button type='submit' class='btn btn-success d-inline' value='Delete'>Mark Unavailable</button></form>",
+                    //     placement: 'right',
+                    //     trigger: 'hover',
+                    //     container: 'body',
+                    //     html: true
+                    // });
+                    }
+                    //arg.event.setProp('display','block');
+                },
+                dayHeaderContent: (args) => {
+                    return moment(args.date).format('dddd D/M')
+                }
+            });
+
+            calendar.render();
+        }
+
+    // function functiondelete(id){
+    //     if (confirm("Are you sure you want to mark this as unavailable?")) {
+    //     var id = id;
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "{% url 'calendar_unavailable'%}",
+    //         data: {'id': id, csrfmiddlewaretoken: '{{ csrf_token }}'},
+    //         async: false
+    //     });
+    //     }
+    // }
+
+    function functioncancel(id){
+        console.log(id)
+        if (confirm("Are you sure you want to Cancel the appointment?")) {
+        
+        $.ajax({
+            type: "POST",
+            url: "{% url 'DeleteAppointment1'%}",
+            data: {'id': id, csrfmiddlewaretoken: '{{ csrf_token }}'},
+            async: false
+        });
+        }
+    }
+
+    function confirmAppointment(pracid,pracName,date1value,startStrvalue,endStrvalue){
+        // document.getElementById('date1').value=date1value;
+        document.getElementById('start').value=startStrvalue;
+        document.getElementById('end').value=endStrvalue;
+        console.log(startStrvalue.slice(-9,-4));
+        document.getElementById('practitionerid').value=pracid;
+        document.getElementById("prac_name").innerHTML = pracName;
+        document.getElementById("app_date").innerHTML = date1value;
+        var timing=startStrvalue.slice(-9,-4)+'-'+endStrvalue.slice(-9,-4);
+        document.getElementById("app_time").innerHTML = timing;
+        $('#exampleModalCenter').modal('show');
+    }
+
+    function functionselectpractitioner(id,name){
+        
+        var id1 = id;
+        console.log(id1);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'makeAppointment'%}",
+            data: {'id1': id1, csrfmiddlewaretoken: '{{ csrf_token }}'},
+            async: false,
+            success: function(data)
+            {   
+                data1=data.viewAvailableSlots1;
+                data2=data.viewBookedSlots;
+                document.getElementById("practitionername").innerHTML = name;
+                document.getElementById("slotrow").style.visibility = "visible";
+                $('.show').collapse('toggle');
+                // console.log(data1[0][4]);
+                var someData = [];
+                for(i=0;i<data1.length;i++){
+                    someData.push({groupId: 'testGroupId',title: "Available", start: data1[i][4], end: data1[i][5],display: 'background'});
+                }
+                var someData2 = [];
+                for(i=0;i<data2.length;i++){
+                    someData2.push({id:data2[i][0],title: "Booked", start: data2[i][6], end: data2[i][7], editable: false});
+                }
+                initcalendar(someData,someData2,name,id1);
+            }
+        });
+    }
+    // function confirmAppointment(calslotid,id1,name,appdate,appstart,append){
+    //     document.getElementById('slot').value=calslotid;
+    //     document.getElementById('practitionerid').value=id1;
+    //     document.getElementById("prac_name").innerHTML = name;
+    //     document.getElementById("app_date").innerHTML = appdate;
+    //     var timing=appstart+'-'+append;
+    //     document.getElementById("app_time").innerHTML = timing;
+    //     document.getElementById("confirmrow").style.display = "block";
+    //     $('.show').collapse('toggle');
+    //     $('#collapseOne3').addClass('show');
+    //     console.log(calslotid+' '+id1+' '+name+' '+appdate+' '+appstart+' '+append);
+    // }
+</script>
+
+ <main>
+     <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Availability</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Do you wish to confirm your availability?
+        </div>
+        <form  name ="myForm1"  method="POST" action="{% url 'BookAppointment' %}" style="text-align:center; padding-bottom: 10px;">
+            {% csrf_token %}
+            <div>
+                <div class="row">
+                    <div class="col-sm-6" style="text-align: right;">
+                        <h5>Practitioner Name: </h5>
+                    </div>
+                    <div class="col-sm-6" style="text-align: left;">
+                        <h5 id="prac_name"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6" style="text-align: right;">
+                        <h5>Date: </h5>
+                    </div>
+                    <div class="col-sm-6" style="text-align: left;">
+                        <h5 id="app_date"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6" style="text-align: right;">
+                        <h5>Timing: </h5>
+                    </div>
+                    <div class="col-sm-6" style="text-align: left;">
+                        <h5 id="app_time"></h5>
+                    </div>
+                </div>
+                <h5>Do you wish to confirm the appointment?</h5>
+            </div>
+            <div style="display: none;">
+                <div class="form-group">
+                    <label for="start">Select Start Time</label>*
+                    <input type="text" name="start" id="start" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="end">Select End Time</label>*
+                    <input type="text" name="end" id="end" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="prac_id">practitionerId</label>*
+                    <input type="text" name="practitionerid" id="practitionerid" readonly>
+                </div>
+            </div>
+          <input type="submit" class="btn btn-primary" value="Confirm" Style="align-self: center;"></input>
+        </form>
+      </div>
+    </div>
+  </div>
+    <div id="accordion">
+    <div class="site-section">
+        <div class="bg-light" style="padding-top:1rem;">
+            <div class="container">
+                <div class="row" id="applicationForm">
+
+                    <div class="col-md-12" style="font-size:medium;">
+                        <h1>Book an Appointment</h1>
+                        {% if messages %}
+                        {% for message in messages %}
+                        <script>alert("{{message}}")</script>
+                        {% endfor %}
+                        {% endif %}
+                      <h2>Fill in the Application Form</h2>
+                      <p>Note: Every appointment is assigned 1 hr</p>
+                      <div class="card" id="practitionerrow">
+                        <div class="row">
+                            <div class="col-md-12" style="background-color: rgb(238, 240, 246); padding-top: 1rem;">
+                                <div class="card-header" role="tab" id="headingOne1">
+                                    <a data-toggle="collapse" href="#collapseOne1" aria-expanded="true" id="header-form"
+                                      aria-controls="collapseOne1">
+                                      <div class="row">
+                                          <div class="col-md-1">
+                                            <h3><i class="fas fa-angle-right up"style="color:black"></i></h3>
+                                          </div>
+                                          <div class="col-md-9">
+                                            <h3 id="practitionername">Select Practitioner</h3>
+                                          </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                            </div>
+                        </div>
+                        <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne1" data-parent="#accordion">
+                        {% for practitioner1 in practitioner_list %}
+                        <div class="row">
+                            <div class="col-md-12" style="background-color: rgb(237, 239, 245); padding-top: 1rem;">
+                                <div class="mb-1 card" style="font-size: 12px;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card-title h4" style="color: rgb(62, 153, 244);"> 
+                                                    {{ practitioner1.1}}  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <p class="card-text h5" style="color: darkgray;">
+                                                    <b>Practitioner Description</b>
+                                                </p>
+                                            </div>
+                                            <div class="col-md-3 offset-md-4">
+                                                    <button class="btn btn-success" onclick="functionselectpractitioner('{{practitioner1.0}}','{{practitioner1.1}}')">
+                                                        Select
+                                                    </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card"  id="slotrow">
+                        <div id='calendar' name='calendar'></div>
+                        <!-- <div id="collapseOne2" class="collapse" aria-labelledby="headingOne2" data-parent="#accordion" style="max-height:600px; overflow-y: scroll;"> -->
+            
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </main>
+    {% endblock content %}
+
+
+        
+ 

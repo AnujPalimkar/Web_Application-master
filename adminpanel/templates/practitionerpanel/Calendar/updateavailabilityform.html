@@ -1,0 +1,76 @@
+{% extends 'practitionerpanel/Calendar/calendar.html' %}
+{% load slotrender%}
+{% block customer_content %}
+<form method="post" autocomplete="off" id="myform" name="myform">
+    {% csrf_token %}
+    <br>
+        <!--Accordion wrapper-->
+    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+      <!-- Accordion card -->
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header" role="tab" id="headingOne1">
+          <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+            aria-controls="collapseOne1">
+            <h5 class="mb-0">
+              My Calendar<i class="fas fa-angle-down rotate-icon"></i>
+            </h5>
+          </a>
+        </div>
+        <!-- Card body -->
+        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+          data-parent="#accordionEx">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="div_selectDate" class="form-group  align-middle">
+                            <label for="slot_date" class="col-form-label  requiredField">
+                                Date<span class="asteriskField">*</span>
+                            </label>
+                        <div class="">
+                            <input type="date" name="slot_date" class="textinput textInput form-control" value= "{{ datevalue }}" readonly>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="text-align: center;" id="timeslot">
+                        <div id="div_selectSlot" class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="slot_booking" class="col-form-label  requiredField">
+                                        Select Available Time Slots<span class="asteriskField">*</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {% for slotid in viewSlots1 %}
+                                    
+                                    <label for="slot_time1" class="col-form-label  requiredField">
+                                        {{ slotid.1 }} - {{ slotid.2 }}
+                                    </label>
+                                        {% if slotid.0 in slotvalue %}
+                                            <input type="checkbox" id="slot_time1" name="slot_time[]" value= "{{ slotid.0 }}" checked><br>
+                                        {% else %}
+                                        <input type="checkbox" id="slot_time1" name="slot_time[]" value= "{{ slotid.0 }}"><br>
+                                        {% endif %} 
+                                    {%  endfor %}  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success btn-lg btn-border"> <i class="fas fa-save"></i> Update </button>
+            </div>
+        </div>
+    </div>
+<!-- Accordion wrapper -->
+</form>
+{% endblock customer_content %}

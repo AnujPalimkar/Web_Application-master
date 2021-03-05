@@ -1,0 +1,45 @@
+{% extends 'adminpanel/consultant/consultant.html' %}
+
+{% block customer_content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+             <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                      <thead>
+                            <tr>
+                                  <th>Name</th>
+                                  <th>Email</th>
+                                  <th>Phone No</th>
+                                  <th>
+                                     <a href="{% url 'consultantList_Add' %}" class="btn btn-outline-success">
+                                        <i class="far fa-plus"></i> Add New
+                                    </a>
+                                  </th>
+                            </tr>
+                      </thead>
+                      <tbody>
+                       {% for cust in consultant_list %}
+                        <tr>
+                            <td>{{ cust.1 }}</td>
+                            <td>{{ cust.2 }}</td>
+                            <td>{{ cust.3 }}</td>
+                            <td>
+                               <form action="{% url 'consultantList_Delete' cust.0 %}" method="post" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">
+                                        <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                                    </button>
+                               </form>
+                            </td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock customer_content %}

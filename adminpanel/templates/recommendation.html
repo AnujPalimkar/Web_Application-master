@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        table {
+          
+            width: 100%;
+        }
+        
+        td,th {
+            padding: 5px;
+            vertical-align: top;
+        }
+        th{
+            text-align:right
+        }
+        td{
+            text-align:left
+        }
+        </style>
+</head>
+<body>
+<h2>Dear, {{clientdetail}}! </h2>
+<br>
+<p>Welcome to ProLongevity...!!!</p>
+<p>Please find detailed report for your Appointment held on {{ Appointmentdetail.0.1 }} .</p>
+<br>
+<table>
+    <colgroup>
+        <col span="1" style="width: 30%;">
+        <col span="1" style="width: 70%;">
+     </colgroup>
+    <tr>
+        <th>Client Name</th>
+        <td>{{ clientdetail }}</td>
+    </tr>
+    <tr>
+        <th>Practitioner Name</th>
+        <td>{{ Appointmentdetail.0.4 }}</td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td>{{ Appointmentdetail.0.1 }}</td>
+    </tr>
+    <tr>
+        <th>Time</th>
+        <td>{{ Appointmentdetail.0.2 }} - {{ Appointmentdetail.0.3 }}</td>
+    </tr>
+    <tr>
+        <th>Diagnosis</th>
+        <td>{{ diagnosis }}</td>
+    </tr>
+    <tr>
+        <th>Rcommendation</th>
+        <td>{{ recommendation }}</td>
+    </tr>
+</table>
+<br>
+<br>
+<p><b>Thank you,</b></p>
+<p><b>ProLongevity Team</b></p>
+</body>
+</html>
