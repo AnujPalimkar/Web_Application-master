@@ -2,18 +2,20 @@ import datetime
 import json
 import stripe
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import EmailMultiAlternatives
 from django.db import connection
 from django.shortcuts import render
 from django.utils.html import strip_tags
 from django.views.generic import ListView
-
+from django.core import serializers
 from ManorPharmacy.util import render_to_pdf
 from adminpanel.models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.http import JsonResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template.loader import render_to_string
 import stripe
 
@@ -48,6 +50,7 @@ class PlanView(ListView):
 # This function display the customer's full order details based on the order number. Fpr that selected order number,
 # whether the payment was done in Full or instalment, it will display the details accordingly.
 # On the site it will be display under: My Account/My ProLongevity / My Plans / Details.
+@login_required(login_url='Login')
 def planDetail(request, id):
     try:
         customer = request.user.customer
@@ -69,6 +72,7 @@ def planDetail(request, id):
 
 # This function will display the number of instalments under that order number.
 # On the site it will be display under: My Account/My ProLongevity / My Plans / Details / Instalment Details.
+@login_required(login_url='Login')
 def paymentInstalment(request, id):
     try:
         totalinstalments = InstallmentDue.objects.filter(Installment_Due_Id=id)
@@ -123,7 +127,8 @@ def payInstalmentDue(request):
         subject = 'Invoice for your order.'
         fromEmail = settings.EMAIL_HOST_USER
         to_list = [request.user.email]
-        html_content = render_to_string("emailpaymentInvoice/InstalmentPaymentInvoice.html", {'username': request.user.username})
+        html_content = render_to_string("emailpaymentInvoice/InstalmentPaymentInvoice.html",
+                                        {'username': request.user.username})
         text_content = strip_tags(html_content)
         emailsend = EmailMultiAlternatives(
             subject,
@@ -204,3 +209,46 @@ def payInstalmentDue(request):
 
     message = 'Payment Completed...!'
     return JsonResponse({'status': 'true', 'message': message}, safe=False)
+
+
+# This function display the list of the customer's (who has logged in) all orders.
+# It will display the list like Order#, Total amount to pay, The Full amount (in case of FUll payment),
+# Payment method and Payment status whether all amount has been paid or some instalments are pending.
+# On the site it will be display under: My Account/My ProLongevity / My Plans.
+
+class PurchaseHistoryView(ListView):
+    model = Product
+    template_name = 'webecommerce/myaccount/purchasehistory.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PurchaseHistoryView, self).get_context_data(**kwargs)
+
+        if self.request.user.id is not None:
+            id = self.request.user.customer.Customer_Id
+            try:
+                cursor = connection.cursor()
+                cursor.callproc('GetPurchaseHistoryByCustomerId', [id])
+                results = cursor.fetchall()
+                page = self.request.GET.get('page', 1)
+                paginator = Paginator(results, 10)
+                try:
+                    purchases = paginator.page(page)
+                except PageNotAnInteger:
+                    purchases = paginator.page(1)
+                except EmptyPage:
+                    purchases = paginator.page(paginator.num_pages)
+                print('purchases', purchases)
+                context['purchases'] = purchases
+            except ObjectDoesNotExist:
+                context['purchases'] = {}
+        return context
+
+
+def trackOrderStatus(request, id):
+    print('in Track Order')
+    print('id', id)
+    order = Order.objects.get(Order_Id=id)
+    print('order 1', order)
+    orderStatus = order.OrderStatus_id
+    message = 'Tracked Order Details...!'
+    return JsonResponse({'status': 'true', 'message': message, 'OrderStatus': orderStatus}, safe=False)

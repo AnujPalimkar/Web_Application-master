@@ -14,13 +14,14 @@
 {#                  <img src="{% static 'dist/img/user2-160x160.jpg'%}" class="img-circle elevation-2" alt="User Image">#}
 {#                </div>#}
                 <div class="info">
-                  Hello, {{ request.user.first_name }}
+                  Hello, {{ request.user }}
                 </div>
               </div>
 
               <!-- Sidebar Menu -->
               <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
                   <li class="nav-item">
                         <a href="{% url 'DashboardHome' %}" class="nav-link">
                             <img src="{% static 'open-iconic-master/svg/dashboard.svg' %}" class="icon-custom-size">
@@ -29,56 +30,34 @@
                           </p>
                         </a>
                     </li>
-                  <!-- <li class="nav-item">
+                  {% if request.user.is_superuser %}
+                  <li class="nav-item">
                         <a href="{% url 'admin' %}" class="nav-link">
-                            <img src="{% static 'open-iconic-master/svg/dashboard.svg' %}" class="icon-custom-size">
+                            <img src="{% static 'open-iconic-master/svg/person.svg' %}" class="icon-custom-size">
                           <p>
                             Admin
                           </p>
                         </a>
-                    </li> -->
-                    <li class="nav-item has-treeview">
-                      <a href="#" class="nav-link">
-                        <img src="{% static 'open-iconic-master/svg/person.svg' %}" class="icon-custom-size">
-                        <p>
-                          Staff Management
-                          <i class="fas fa-angle-down left"></i>
-                        </p>
-                      </a>
-                      <ul class="nav nav-treeview">
-                        {% if request.user.user_type_id == 5 %}
-                        <li class="nav-item">
-                          <a href="{% url 'superadminList' %}" class="nav-link">
-                            <p>Manage Super Admin</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="{% url 'AdminList' %}" class="nav-link">
-                            <p>Manage Admin</p>
-                          </a>
-                        </li>
-                        {% endif %}
-                        <li class="nav-item">
-                          <a href="{% url 'practitionerList' %}" class="nav-link">
-                            <p>Manage Practitioner</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="{% url 'consultantList' %}" class="nav-link">
-                            <p>Manage Consultants</p>
-                          </a>
-                        </li>
-                      </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="{% url 'ActivityLog' %}" class="nav-link">
+                            <img src="{% static 'open-iconic-master/svg/monitor.svg' %}" class="icon-custom-size">
+                          <p>
+                            Activity Logs
+                          </p>
+                        </a>
+                    </li>
+                   {% endif %}
                   <li class="nav-item">
                     <a href="{% url 'Customer' %}" class="nav-link">
-                        <img src="{% static 'open-iconic-master/svg/person.svg' %}" class="icon-custom-size">
+                        <img src="{% static 'open-iconic-master/svg/people.svg' %}" class="icon-custom-size">
                       <p>
                         Clients
                       </p>
                     </a>
                   </li>
-                  {% if request.user.user_type_id == 5 %}
+
+                  {% if request.user.is_superuser %}
                   <li class="nav-item">
                     <a href="{% url 'Usertype' %}" class="nav-link">
                         <img src="{% static 'open-iconic-master/svg/person.svg' %}" class="icon-custom-size">
@@ -87,6 +66,7 @@
                       </p>
                     </a>
                   </li>
+                  {% endif %}
                   <li class="nav-item">
                     <a href="{% url 'Product' %}" class="nav-link">
                          <i class="fa fa-pallet"></i>
@@ -97,49 +77,53 @@
                   </li>
                   <li class="nav-item">
                     <a href="{% url 'Service' %}" class="nav-link">
-                         <i class="fa fa-pallet"></i>
+                         <i class="fa fa-list"></i>
                       <p>
                         Services
                       </p>
                     </a>
                   </li>
+                  {% if request.user.is_superuser %}
                   <li class="nav-item">
                     <a href="{% url 'Discount' %}" class="nav-link">
-                        <i class="money-check-alt"></i>
+                      <i class="fa fa-minus"></i>
                       <p>
                         Discount
                       </p>
                     </a>
                   </li>
+                  {% endif %}
                   <li class="nav-item">
                     <a href="{% url 'Post' %}" class="nav-link">
-                      <i class=""></i>
+                      <i class="fa fa-bell"></i>
                       <p>
                         Announcements
                       </p>
                     </a>
                   </li>
+                  {% if request.user.is_superuser %}
                   <li class="nav-item">
                     <a href="{% url 'Configuration' %}" class="nav-link">
-                      <i class=""></i>
+                      <img src="{% static 'open-iconic-master/svg/cog.svg' %}" class="icon-custom-size">
                       <p>
                         Configuration
                       </p>
                     </a>
                   </li>
+                  {% endif %}
                   <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-table"></i>
+                      <img src="{% static 'open-iconic-master/svg/project.svg' %}" class="icon-custom-size">
                       <p>
                         Manage Orders
-                        <i class="fas fa-angle-down left"></i>
+                        <i class="fas fa-angle-right right"></i>
                       </p>
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="{% url 'OrderDetails' %}" class="nav-link">
+                        <a href="{% url 'ManageOrder' %}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>Client Orders</p>
+                          <p>Manage Current Orders</p>
                         </a>
                       </li>
                     </ul>
@@ -149,27 +133,42 @@
                       <i class="nav-icon fas fa-table"></i>
                       <p>
                         Reports
-                        <i class="fas fa-angle-down left"></i>
+                        <i class="fas fa-angle-right right"></i>
                       </p>
                     </a>
                     <ul class="nav nav-treeview">
-                      <li class="nav-item">
+                      <!--<li class="nav-item">
                         <a href="{% url 'OrderSummary' %}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Order Summary</p>
                         </a>
+                      </li>-->
+                      <li class="nav-item">
+                        <a href="{% url 'OrderDetails' %}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Order Details</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{% url 'ReportByClient' %}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Report by Client</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{% url 'ReportByProduct' %}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Report by Product</p>
+                        </a>
+                      </li>
+                       <li class="nav-item">
+                        <a href="{% url 'ShippedOrders' %}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Shipped Orders</p>
+                        </a>
                       </li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a href="{% url 'Invoice' %}" class="nav-link">
-                      <i class=""></i>
-                      <p>
-                        Invoice
-                      </p>
-                    </a>
-                  </li>
-                  {% endif %}
                 </ul>
               </nav>
               <!-- /.sidebar-menu -->
