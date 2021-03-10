@@ -57,7 +57,6 @@ def home(request):
         group_name = request.user.groups.all()[0].name
     if group_name.lower() == 'client':
         return redirect('index')
-    return render(request, "adminpanel/home_content.html")
     elif group_name.lower() == 'practitioner':
         userId=request.user.id
         cursor1 = connection.cursor()
