@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -37,13 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    # 'ManorPharmacy.apps.ManorpharmacyConfig',
     'adminpanel.apps.AdminConfig',
-    'gateway.apps.GatewayConfig',
     'crispy_forms',
     'django_countries',
     'WebEcommerce.apps.WebecommerceConfig',
-    'stripe'
+    'stripe',
+    'eventlog',
 ]
 
 SITE_ID = 1
@@ -73,13 +71,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'WebEcommerce.context_processors.stripeSettingValues',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'WebApplication.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -100,7 +98,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -119,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -132,7 +128,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -148,6 +143,12 @@ AUTHENTICATION_BACKENDS = [
     'adminpanel.CustomUserDecorator.CustomDecorator'
 ]
 
+# Set the number of days prior to which we need to send Automatic email reminder to client.
+# It will be used in AutoReminderEmailForInstalmentPayment.py file.
+
+EMAIL_REMINDER_DAYS = 5
+
+DATE_INPUT_FORMATS = ('%d-%m-%Y', '%Y-%m-%d')
 
 # SMTP Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -169,10 +170,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/productimages')
 PDF_URL = '/invoicepdf/'
 PDF_ROOT = os.path.join(BASE_DIR, 'static/invoicepdf')
 
-
 PaymentProcessorDomain = 'paymentprocessor.net'
 
 PaymentProcessorPort = '4430'
 
 STRIPE_PUBLISHABLE_KEY = 'pk_test_CfCShTwexDCdPO3cuj9KyIVr'
+# 'pk_test_CfCShTwexDCdPO3cuj9KyIVr'
 STRIPE_SECRET_KEY = 'sk_test_2307FN7S7CCZCZGdCMhjqhTV00jO5nN1jQ'
+# 'sk_test_2307FN7S7CCZCZGdCMhjqhTV00jO5nN1jQ'

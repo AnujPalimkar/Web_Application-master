@@ -1,6 +1,9 @@
 from django.contrib import messages
 from django.http import JsonResponse
 from django.shortcuts import render,redirect
+from django.shortcuts import render
+from django.utils.html import strip_tags
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.views.generic import ListView, DetailView, View
 import datetime
@@ -50,15 +53,17 @@ class IndexView(ListView):
         context['AnnouncementPost'] = AnnouncementPost.objects.filter(IsActive=1)
         # Fetch Cart Details for customers to display on cart hover.
         orderitems = {}
+        order = {}
         if self.request.user.id is not None:
-            customer = self.request.user.customer
-            try:
-                order = Order.objects.get(Customer=customer, IsOrderCompleted=False)
-                orderitems = order.orderdetails_set.all()
-            except ObjectDoesNotExist:
-                order = {}
+            hasCustomer = hasattr(self.request.user, 'customer')
+            if hasCustomer:
+                try:
+                    customer = self.request.user.customer
+                    order = Order.objects.get(Customer=customer, IsOrderCompleted=False)
+                    orderitems = order.orderdetails_set.all()
+                except ObjectDoesNotExist:
+                    order = {}
         context['orderitems'] = orderitems
-
         return context
 
 
@@ -81,13 +86,16 @@ class ShopView(ListView):
         allProducts.append(services)
         context['allProducts'] = allProducts
         # Fetch Cart Details for customers to display on cart hover.
-        customer = self.request.user.customer
-        try:
-            order = Order.objects.get(Customer=customer, IsOrderCompleted=False)
-            orderitems = order.orderdetails_set.all()
-        except ObjectDoesNotExist:
-            order = {}
-            orderitems = {}
+        order = {}
+        orderitems = {}
+        if self.request.user.id is not None:
+            try:
+                customer = self.request.user.customer
+                order = Order.objects.get(Customer=customer, IsOrderCompleted=False)
+                orderitems = order.orderdetails_set.all()
+            except ObjectDoesNotExist:
+                order = {}
+                orderitems = {}
 
         context['orderitems'] = orderitems
         # And so on for more models
@@ -121,6 +129,30 @@ class DetailView(DetailView):
     model = Product
     template_name = 'webecommerce/detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(DetailView, self).get_context_data(**kwargs)
+        allProducts = []
+        products = Product.objects.filter(IsProduct=1)
+        allProducts.append(products)
+        services = Product.objects.filter(IsProduct=0)
+        allProducts.append(services)
+        context['allProducts'] = allProducts
+        # Fetch Cart Details for customers to display on cart hover.
+        order = {}
+        orderitems = {}
+        if self.request.user.id is not None:
+            try:
+                customer = self.request.user.customer
+                order = Order.objects.get(Customer=customer, IsOrderCompleted=False)
+                orderitems = order.orderdetails_set.all()
+            except ObjectDoesNotExist:
+                order = {}
+                orderitems = {}
+
+        context['orderitems'] = orderitems
+        # And so on for more models
+        return context
+
 
 # This function represents the total items which are added in the shopping cart.
 # It also show the discount amount: If user wants to pay full amount in one go,
@@ -139,6 +171,7 @@ def cart(request):
 
     context = {'items': items, 'order': order, 'cartItems': cartItems, 'itemCount': len(items),
                'discountAmountForFullPayment': discountAmountForFullPayment,
+               'orderitems': items,
                'totalAmountWithDiscount': totalAmountWithDiscount}
     return render(request, 'webecommerce/cart.html', context)
 
@@ -216,6 +249,7 @@ def checkout(request):
                'IsServiceExists': IsServiceExists,
                'IsProductExists': IsProductExists,
                'form': form,
+               'orderitems': items,
                'STRIPE_PUBLISHABLE_KEY': STRIPE_PUBLISHABLE_KEY
                }
 
@@ -228,16 +262,17 @@ def checkout(request):
 # Also, it will send the Invoice  as an attachment along with an email.
 def placeOrder(request):
     transId = datetime.datetime.now().timestamp()
-
+    print('in place order')
     data = json.loads(request.body)
     cookiedata = cartData(request)
     items = cookiedata['items']
     orderFromCookie = cookiedata['order']
-    address = data['Shipping']
     paymentInInstalment = data['paymentInInstalment']
     serviceDiscount = data['serviceDiscount']
     serviceDiscountPercentage = data['serviceDiscountPercentage']
     serviceDiscountId = data['serviceDiscountId']
+    shippingAddress = data['shippingAddress']
+    billingAddress = data['billingAddress']
 
     try:
         customer = request.user.customer
@@ -247,6 +282,42 @@ def placeOrder(request):
             payment, created = Payment.objects.get_or_create(Order=order)
         else:
             customer, order, payment = guestOrder(request, data)
+
+        billing_Address = Address.objects.filter(User_Id=request.user.id, Address_Type='B')
+        shipping_Address = Address.objects.filter(User_Id=request.user.id, Address_Type='S')
+
+        print('billingAddress', billingAddress)
+        print('shippingAddress', shippingAddress)
+        print('billing_Address', billing_Address)
+        print('shipping_Address', shipping_Address)
+        if billingAddress['address'] != '':
+            print('in 1 if billing')
+            if len(billing_Address) == 0:
+                print('in 2 if billing')
+                sh_address = Address.objects.create(User_Id=request.user)
+                sh_address.Addressline1 = billingAddress['address']
+                sh_address.Addressline2 = billingAddress['address2']
+                sh_address.State = billingAddress['state']
+                sh_address.Postal_Code = billingAddress['zipcode']
+                sh_address.Country = billingAddress['country']
+                sh_address.CountryCode = billingAddress['countrycode']
+                sh_address.Address_Type = 'B'
+                sh_address.save()
+
+        if shippingAddress['address'] != '':
+            print('in 1 if shipping')
+            if len(shipping_Address) == 0:
+                print('in 2 if shipping')
+                sh_address = Address.objects.create(User_Id=request.user)
+                print('sh_address', sh_address)
+                sh_address.Addressline1 = shippingAddress['address']
+                sh_address.Addressline2 = shippingAddress['address2']
+                sh_address.State = shippingAddress['state']
+                sh_address.Postal_Code = shippingAddress['zipcode']
+                sh_address.Country = shippingAddress['country']
+                sh_address.CountryCode = shippingAddress['countrycode']
+                sh_address.Address_Type = 'S'
+                sh_address.save()
 
         total = float(data['User']['total'])
         payment.Amount = total
@@ -332,6 +403,7 @@ def placeOrder(request):
             # Payment Integration
             token = data['token']  # request.POST.get("stripeToken")
             paymentDescription = 'Payment Done by ' + data['User']['name']
+            print(total)
             charge = stripe.Charge.create(
                 amount=int(total * 100),
                 currency="gbp",
@@ -431,7 +503,8 @@ def placeOrder(request):
         fromEmail = settings.EMAIL_HOST_USER
         to_list = [data['User']['email']]
         try:
-            html_content = render_to_string("emailInvoice/InvoiceContent.html", {'username': data['User']['name']})
+            html_content = render_to_string("emailpaymentInvoice/InvoiceContent.html",
+                                            {'username': data['User']['name']})
             text_content = strip_tags(html_content)
             emailsend = EmailMultiAlternatives(
                 subject,
@@ -447,7 +520,7 @@ def placeOrder(request):
                 'email': data['User']['email']
             }
             emailsend.attach_alternative(html_content, "text/html")
-            pdf = render_to_pdf('pdf/invoice.html', data)
+            pdf = render_to_pdf('pdffiles/invoice.html', data)
             emailsend.attach('invoice.pdf', pdf, 'file/pdf')
             emailsend.send()
             print('email sent')
@@ -464,9 +537,11 @@ def placeOrder(request):
         # messages.error(request, "There is some issue while processing order")
     finally:
         connection.close()
+
     print('completed')
     message = 'Payment Completed...!'
-    return JsonResponse({'status': 'true', 'message': message}, safe=False)
+    return JsonResponse(
+        {'status': 'true', 'message': message, 'PaymentId': payment.Payment_Id, 'OrderId': order.Order_Id}, safe=False)
 
 
 # After the customer has successfully paid the amount, it will redirect the customer on the Thank you page.
@@ -599,4 +674,21 @@ def DeleteAppointment1(request):
         id=request.POST.get('id',None)
         cursor.callproc('DeleteAppointment',[id])
         data = {}
-        return JsonResponse({'success':True})
+        return JsonResponse({'success':True})    def get_context_data(self, **kwargs):
+        context = super(ThankYouView, self).get_context_data(**kwargs)
+        data = cartData(self.request)
+        order = data['order']
+        print('data is', data)
+        print(order)
+        print(order.Order_Id)
+        order = Order.objects.get(Order_Id=order.Order_Id)
+        print('orders are', order)
+        items = OrderDetails.objects.filter(Order=order.Order_Id)
+        print('items are', items)
+        paymentDetail = Payment.objects.filter(Order=order)
+        # print('payment are', paymentDetail)
+        # TotalPayment = paymentDetail.Amount
+        # print(TotalPayment)
+        # context['Total'] = TotalPayment
+        context['items'] = items
+        return context
