@@ -1,4 +1,3 @@
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
@@ -11,13 +10,18 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.db import connection
 from django.template.loader import render_to_string, get_template
 from django.utils.html import strip_tags
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 
 def login_user(request):
+    next = ''
+    if request.GET:
+        next = request.GET['next']
     if request.user.is_authenticated:
         return redirect('/home')
     else:
-        return render(request, 'login.html')
+        return render(request, 'login.html', context={'next': next})
 
 
 @CustomDecorator.unauthenticated_user
@@ -39,6 +43,8 @@ def registration(request):
                 email = form.cleaned_data.get("email")
                 password1 = request.POST.get("password1")
                 password = make_password(password1)
+                address1 = request.POST.get("addressline1")
+                address2 = request.POST.get("addressline2")
 
                 if referralid is None:
                     referralid = 0
@@ -49,16 +55,12 @@ def registration(request):
                 str = referralid
                 cursor.callproc('GetCustomerDetailsByUserId', [str])
                 refereeDetails = cursor.fetchone()
-
                 referralCustomerId = 0
                 if refereeDetails is not None:
                     referralCustomerId = refereeDetails[0]
                 cursor.callproc('InsertUserCustomerRegistrationDetails',
                                 [firstname, username, lastname, password, email, referralCustomerId])
                 username = form.cleaned_data.get("username")
-
-                # group = Group.objects.get(name='customer')
-                # new_user.groups.add(group)
 
                 subject = 'Thank you for your registration.'
                 fromEmail = settings.EMAIL_HOST_USER
@@ -76,7 +78,7 @@ def registration(request):
                     emailsend.attach_alternative(html_content, "text/html")
                     emailsend.send()
 
-                    # Email sent to Referree
+                    # Email sent to Referee
                     if int(referralid) > 0:
 
                         # Fetch Referee emailid from the UserId:
@@ -112,13 +114,14 @@ def registration(request):
                 print(form.errors)
                 print(form.error_messages)
         except Exception as e:
-            print('Error Is:')
+            print('Error Is:', str(e))
     context = {'form': form}
     return render(request, 'registration.html', context)
 
 
 @CustomDecorator.unauthenticated_user
 def dologin(request):
+    redirectUrl = request.POST.get('next')
     if request.method != "POST":
         return HttpResponse("<h2>Login not allowed</h2>")
     else:
@@ -126,7 +129,12 @@ def dologin(request):
                                             password=request.POST.get("password"))
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect("/home")
+            # next contain the URL of Plan detail when client receives an email regarding instalment payment. The URL
+            # to which client needs to redirect after login, will be stored in next variable of the request path.
+            if redirectUrl == "":
+                return HttpResponseRedirect("/home")
+            else:
+                return HttpResponseRedirect(redirectUrl)
         else:
             messages.error(request, "Invalid Login Details")
             return HttpResponseRedirect("/")
@@ -142,3 +150,31 @@ def get_user_details(request):
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect("/")
+
+
+@login_required(login_url='Login')
+@CustomDecorator.allowed_users(allowed_roles=['superadmin'])
+def changeViewBySuperAdmin(request):
+
+    groupview = request.POST.get("groupview")
+
+    if request.user.groups.values_list('name', flat=True).exists():
+        group_name = request.user.groups.all()[0].name.replace(" ", "").lower()
+
+    print('GROUP NAME IS')
+    print(group_name)
+    url = '/home'
+    if (group_name == 'superadmin' and groupview.lower() == 'superadmin') \
+            or (group_name == 'superadmin' and groupview.lower() == 'admin'):
+        print('redirected to admin / super admin landing page.')
+        url = '/home'
+
+    if group_name == 'superadmin' and groupview.lower() == 'client':
+        print('redirected to client landing page.')
+        url = '/index'
+
+    if group_name == 'physician':
+        print('redirected to physician landing page.')
+        url = '/home'
+
+    return JsonResponse({"url": url}, safe=False)

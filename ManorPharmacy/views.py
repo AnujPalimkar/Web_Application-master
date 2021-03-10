@@ -6,8 +6,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 import datetime
 from django.db.models.functions import Concat
-from gateway.tphelperdev import getVars, getHashDigest, generateHashDigest
-from gateway.viewsdev import callback, callbackForPayment
 from .filters import ProductFilter
 from .util import *
 from django.conf import settings
@@ -145,9 +143,6 @@ def payment(request):
     yearList = []
     totalwithDiscount = 0
 
-    # For Payment gateway default values.
-    index_context = getVars()
-    index_context.update({'merch_hashdigest': getHashDigest(index_context)})
     IsServiceExists = False
     IsProductExists = False
     discountOnProduct = 0
@@ -193,7 +188,6 @@ def payment(request):
                'customerPersonalDiscountAmount': customerPersonalDiscountAmount,
                'IsServiceExists': IsServiceExists,
                'IsProductExists': IsProductExists,
-               'index_context': index_context
                }
     return render(request, 'manorpharmacy/ordersummary.html', context)
 
@@ -441,13 +435,18 @@ def applyDiscount(request):
     print('customerid')
     print(id)
     print(str)
-    amountToPay = request.POST.get("totalAmount")
+    totalServiceAmount = request.POST.get("totalServiceAmount")
+    totalInitialSetupAmount = request.POST.get("totalInitialSetupAmount")
+    totalAmountToPay = request.POST.get("totalAmount")
+    amountToPay = float(totalServiceAmount) + float(totalInitialSetupAmount)
+    print('totalServiceAmount', totalServiceAmount)
+    print('totalInitialSetupAmount', totalInitialSetupAmount)
     cursor.callproc('GetDiscountByName', [str, id])
     discountTYpe = cursor.fetchone()
     print('amountToPay', amountToPay)
     print(discountTYpe)
     discountCodeAmout = (float(amountToPay) * discountTYpe[2]) / 100
-    amountAfterDiscount = float(amountToPay) - discountCodeAmout
+    amountAfterDiscount = float(totalAmountToPay) - discountCodeAmout
     print('Amount to pay', amountAfterDiscount)
     return JsonResponse({"discountCodeAmout": discountCodeAmout, "amountAfterDiscount": amountAfterDiscount,
                          "discountPercentage": discountTYpe[2], 'id': discountTYpe[0]}, safe=False)

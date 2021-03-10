@@ -23,11 +23,13 @@
                                   <th>Code</th>
                                   <th>Description</th>
                                   <th>Price</th>
+                                {% if request.user.is_superuser %}
                                   <th>
                                     <a href="{% url 'Service_Add' %}" class="btn btn-outline-success">
                                         <i class="far fa-plus"></i> Add New
                                     </a>
                                   </th>
+                                {% endif %}
                             </tr>
                       </thead>
                       <tbody>
@@ -37,7 +39,8 @@
                             <td>{{ service.2 }}</td>
                             <td>{{ service.3 }}</td>
                             <td class="numericValue">{{ service.4 |floatformat:2 }}</td>
-                             <td>
+                            <td>
+                                {% if request.user.is_superuser %}
                                 <a href="{% url 'Service_Update' service.0 %}" class="btn text-secondary px-0">
                                     <i class="far fa-edit fa-lg"></i>
                                 </a>
@@ -47,6 +50,7 @@
                                         <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
                                     </button>
                                 </form>
+                                {% endif %}
                             </td>
                         </tr>
                       {% endfor %}
