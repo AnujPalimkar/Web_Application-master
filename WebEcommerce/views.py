@@ -549,6 +549,25 @@ def placeOrder(request):
 class ThankYouView(ListView):
     model = Product
     template_name = 'webecommerce/thankyou.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super(ThankYouView, self).get_context_data(**kwargs)
+        data = cartData(self.request)
+        order = data['order']
+        print('data is', data)
+        print(order)
+        print(order.Order_Id)
+        order = Order.objects.get(Order_Id=order.Order_Id)
+        print('orders are', order)
+        items = OrderDetails.objects.filter(Order=order.Order_Id)
+        print('items are', items)
+        paymentDetail = Payment.objects.filter(Order=order)
+        # print('payment are', paymentDetail)
+        # TotalPayment = paymentDetail.Amount
+        # print(TotalPayment)
+        # context['Total'] = TotalPayment
+        context['items'] = items
+        return context
 
 
 def makeAppointment(request):
@@ -674,21 +693,4 @@ def DeleteAppointment1(request):
         id=request.POST.get('id',None)
         cursor.callproc('DeleteAppointment',[id])
         data = {}
-        return JsonResponse({'success':True})    def get_context_data(self, **kwargs):
-        context = super(ThankYouView, self).get_context_data(**kwargs)
-        data = cartData(self.request)
-        order = data['order']
-        print('data is', data)
-        print(order)
-        print(order.Order_Id)
-        order = Order.objects.get(Order_Id=order.Order_Id)
-        print('orders are', order)
-        items = OrderDetails.objects.filter(Order=order.Order_Id)
-        print('items are', items)
-        paymentDetail = Payment.objects.filter(Order=order)
-        # print('payment are', paymentDetail)
-        # TotalPayment = paymentDetail.Amount
-        # print(TotalPayment)
-        # context['Total'] = TotalPayment
-        context['items'] = items
-        return context
+        return JsonResponse({'success':True})    
