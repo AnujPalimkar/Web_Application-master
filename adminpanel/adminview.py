@@ -527,15 +527,20 @@ def post_delete(request, id):
 @login_required(login_url='Login')
 @CustomDecorator.allowed_users(allowed_roles=['superadmin', 'admin'])
 def activitylog_list(request):
-def config_list(request):
     cursor = connection.cursor()
     cursor.execute("call GetActivityLogList()")
-    cursor.execute("call GetConfigurationList()")
     results = cursor.fetchall()
     print('in activity log list')
     print(results)
     context = {"activitylog_list": results}
     return render(request, "adminpanel/activitylog/activityloglist.html", context)
+
+@login_required(login_url='Login')
+@CustomDecorator.allowed_users(allowed_roles=['superadmin', 'admin'])  
+def config_list(request):
+    cursor = connection.cursor()
+    cursor.execute("call GetConfigurationList()")
+    results = cursor.fetchall()
     context = {"config_list": results}
     return render(request, "adminpanel/configuration/configurationlist.html", context)
 
@@ -543,11 +548,9 @@ def config_list(request):
 @login_required(login_url='Login')
 @CustomDecorator.allowed_users(allowed_roles=['superadmin', 'admin'])
 def discount_operation(request, id=0):
-def config_operation(request, id=0):
     if request.method == "GET":
         if id == 0:
             discount = DiscountTypeForm()
-            config = ConfigurationForm()
         else:
             # disc = DiscountType.objects.get(pk=id)
             # form = DiscountTypeForm(instance=disc)
@@ -555,6 +558,37 @@ def config_operation(request, id=0):
                 cursor = connection.cursor()
                 cursor.callproc('GetDiscountTypeById', [id])
                 discount = cursor.fetchone()
+            except ConnectionError as e:
+                print('ERROR IS: ')
+                print(format(e))
+            finally:
+                cursor.close()
+        return render(request, "adminpanel/discount/discountoperation.html", {'form': discount})
+    else:
+        if id == 0:
+            form = DiscountTypeForm(request.POST)
+            # log(user=request.user, action="Add Discount", extra={"DiscountCode":})
+        else:
+            disc = DiscountType.objects.get(pk=id)
+            form = DiscountTypeForm(request.POST, instance=disc)
+        try:
+            if form.is_valid():
+                form.save()
+            else:
+                print(form.errors)
+        except OperationalError as e:
+            print(format(e))
+        return redirect('/Discount')
+
+def config_operation(request, id=0):
+    if request.method == "GET":
+        if id == 0:
+            config = ConfigurationForm()
+        else:
+            # disc = DiscountType.objects.get(pk=id)
+            # form = DiscountTypeForm(instance=disc)
+            try:
+                cursor = connection.cursor()
                 cursor.callproc('GetConfigurationById', [id])
                 config = cursor.fetchone()
             except ConnectionError as e:
@@ -562,16 +596,12 @@ def config_operation(request, id=0):
                 print(format(e))
             finally:
                 cursor.close()
-        return render(request, "adminpanel/discount/discountoperation.html", {'form': discount})
         return render(request, "adminpanel/configuration/configurationoperation.html", {'form': config})
     else:
         if id == 0:
-            form = DiscountTypeForm(request.POST)
             # log(user=request.user, action="Add Discount", extra={"DiscountCode":})
             form = ConfigurationForm(request.POST, request.FILES)
         else:
-            disc = DiscountType.objects.get(pk=id)
-            form = DiscountTypeForm(request.POST, instance=disc)
             config = Configuration.objects.get(pk=id)
             form = ConfigurationForm(request.POST, request.FILES, instance=config)
         try:
@@ -581,7 +611,6 @@ def config_operation(request, id=0):
                 print(form.errors)
         except OperationalError as e:
             print(format(e))
-        return redirect('/Discount')
         return redirect('/Configuration')
 
 
@@ -591,6 +620,7 @@ def discount_delete(request, id):
     disc = DiscountType.objects.get(pk=id)
     disc.delete()
     return redirect('/Discount')
+
 def orderdetailslist(request):
     cursor = connection.cursor()
     cursor.execute("call GetClientOrderDetailsList()")
@@ -601,9 +631,6 @@ def orderdetailslist(request):
     return render(request, "adminpanel/customize/manageorderlist.html", context)
 
 
-@login_required(login_url='Login')
-@CustomDecorator.allowed_users(allowed_roles=['superadmin', 'admin'])
-def config_list(request):
 def orderdetails_update(request, id=0):
     if request.method == "GET":
         try:
@@ -691,13 +718,6 @@ def admin_operation(request, id=0):
 
 
 @login_required(login_url='Login')
-@CustomDecorator.allowed_users(allowed_roles=['superadmin', 'admin'])
-def config_operation(request, id=0):
-    if request.method == "GET":
-        if id == 0:
-            config = ConfigurationForm()
-        else:
-            try:
 def admin_delete(request, id):
     cursor = connection.cursor()
     cursor.callproc('DeleteAdminUser',[id])
@@ -723,11 +743,11 @@ def superadmin_operation(request, id=0):
                 cursor = connection.cursor()
                 cursor.callproc('GetConfigurationById', [id])
                 config = cursor.fetchone()
-            except ConnectionError as e:
-                print('ERROR IS: ')
-                print(format(e))
-            finally:
-                cursor.close()
+        except ConnectionError as e:
+            print('ERROR IS: ')
+            print(format(e))
+        finally:
+            cursor.close()
         return render(request, "adminpanel/configuration/configurationoperation.html", {'form': config})
     else:
         if id == 0:
@@ -735,47 +755,40 @@ def superadmin_operation(request, id=0):
         else:
             config = Configuration.objects.get(pk=id)
             form = ConfigurationForm(request.POST, request.FILES, instance=config)
-                letters_and_digits = string.ascii_letters + string.digits
-                password1 = ''.join((random.choice(letters_and_digits) for i in range(8)))
-                firstname = request.POST.get("First_Name")
-                lastname = request.POST.get("Last_Name")
-                email = form.cleaned_data.get("Email")
-                username=email
-                phone=form.cleaned_data.get("Phone_No")
-                gender=form.cleaned_data.get("Gender")
-                password = make_password(password1)
+            letters_and_digits = string.ascii_letters + string.digits
+            password1 = ''.join((random.choice(letters_and_digits) for i in range(8)))
+            firstname = request.POST.get("First_Name")
+            lastname = request.POST.get("Last_Name")
+            email = form.cleaned_data.get("Email")
+            username=email
+            phone=form.cleaned_data.get("Phone_No")
+            gender=form.cleaned_data.get("Gender")
+            password = make_password(password1)
 
-                cursor.callproc('InsertNewSuperAdmin',
-                                [firstname, username, lastname, password, email,phone,gender])
-                print(password1)
-                subject = 'Thank you for your registration.'
-                fromEmail = settings.EMAIL_HOST_USER
-                to_list = [form.cleaned_data.get("Email")]
-                try:
-                    html_content = render_to_string("message1.html", {'username': username,'password1':password1})
-                    text_content = strip_tags(html_content)
+            cursor.callproc('InsertNewSuperAdmin',
+                            [firstname, username, lastname, password, email,phone,gender])
+            print(password1)
+            subject = 'Thank you for your registration.'
+            fromEmail = settings.EMAIL_HOST_USER
+            to_list = [form.cleaned_data.get("Email")]
+            try:
+                html_content = render_to_string("message1.html", {'username': username,'password1':password1})
+                text_content = strip_tags(html_content)
 
-                    emailsend = EmailMultiAlternatives(
-                        subject,
-                        text_content,
-                        fromEmail,
-                        to_list
-                    )
-                    emailsend.attach_alternative(html_content, "text/html")
-                    emailsend.send()
-                except Exception as e:
-                    print('Error in sending email while registration')
-                    messages.error(request, "There is some issue while creating account for " + username)
-                messages.success(request, "Account created for" + username)
-                return redirect('superadminList')
-            else:
-                print('error')
-                print(form.errors)
-                print(form.error_messages)
-        except Exception as e:
-            print('Error Is:')
-    context = {'form': form}
-    return render(request, 'adminpanel/superadmin/superadminoperation.html', context)
+                emailsend = EmailMultiAlternatives(
+                    subject,
+                    text_content,
+                    fromEmail,
+                    to_list
+                )
+                emailsend.attach_alternative(html_content, "text/html")
+                emailsend.send()
+            except Exception as e:
+                print('Error in sending email while registration')
+                messages.error(request, "There is some issue while creating account for " + username)
+            messages.success(request, "Account created for" + username)
+            return redirect('superadminList')
+        return render(request, 'adminpanel/superadmin/superadminoperation.html', context)
 
 
 @login_required(login_url='Login')
@@ -839,10 +852,6 @@ def practitioner_operation(request, id=0):
             else:
                 print('error')
                 print(form.errors)
-        except OperationalError as e:
-            print(format(e))
-        return redirect('/Configuration')
-                print(form.error_messages)
         except Exception as e:
             print('Error Is:', str)
     context = {'form': form}
@@ -852,20 +861,12 @@ def practitioner_operation(request, id=0):
 @login_required(login_url='Login')
 @CustomDecorator.allowed_users(allowed_roles=['superadmin', 'admin'])
 def manageCurrentOrderDetailsList(request):
+    cursor=connection.cursor()
     searchCriteriaValue = request.POST.get("txtSearchForManageOrder")
     category = request.POST.get("searchManageOrder")
     print('searchCriteriaValue', searchCriteriaValue)
     print('category', category)
-def practitioner_delete(request, id):
-    cursor = connection.cursor()
-    cursor.callproc('DeletePractitionerUser',[id])
-    return redirect('/practitionerList')
-
-@login_required(login_url='Login')
-def consultant_list(request):
-    cursor = connection.cursor()
     cursor.execute("call GetCurrentPlacedAndProcessedOrders()")
-    cursor.execute("call GetConsultantList()")
     results = cursor.fetchall()
     page = request.GET.get('page', 1)
     paginator = Paginator(results, 10)
@@ -875,11 +876,23 @@ def consultant_list(request):
         orderDetails = paginator.page(1)
     except EmptyPage:
         orderDetails = paginator.page(paginator.num_pages)
+    context = {"currentOrders": orderDetails}
+    return render(request, "adminpanel/adminmanagement/manageCurrentOrder.html", context)
+
+
+def practitioner_delete(request, id):
+    cursor = connection.cursor()
+    cursor.callproc('DeletePractitionerUser',[id])
+    return redirect('/practitionerList')
+
+@login_required(login_url='Login')
+def consultant_list(request):
+    cursor = connection.cursor()
+    cursor.execute("call GetConsultantList()")
+    results = cursor.fetchall()
     context = {"consultant_list": results}
     return render(request, "adminpanel/consultant/consultantlist.html", context)
 
-    context = {"currentOrders": orderDetails}
-    return render(request, "adminpanel/adminmanagement/manageCurrentOrder.html", context)
 @login_required(login_url='Login')
 def consultant_operation(request, id=0):
     form = CustomerForm()
@@ -962,6 +975,7 @@ def manageCurrentOrderShip(request, id):
         print('Error Is:', str(e))
         message = "Failed"
     print('email sent from adminpanel/adminview/manageCurrentOrderShip')
+
 def consultant_delete(request, id):
     cursor = connection.cursor()
     cursor.callproc('DeleteConsultantUser',[id])
@@ -1000,7 +1014,9 @@ def manageCurrentOrderProcess(request, id):
     order = Order.objects.get(Order_Id=id)
     order.OrderStatus_id = 2
     order.save()
-    return redirect('/ManageOrder')def confirmAvailability(request):
+    return redirect('/ManageOrder')
+
+def confirmAvailability(request):
     userId=request.user.id
     cursor1 = connection.cursor()
     cursor1.execute("call viewSlots()")

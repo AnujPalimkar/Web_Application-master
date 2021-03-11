@@ -764,7 +764,7 @@ CREATE TABLE `adminpanel_user` (
 
 LOCK TABLES `adminpanel_user` WRITE;
 /*!40000 ALTER TABLE `adminpanel_user` DISABLE KEYS */;
-INSERT INTO `adminpanel_user` VALUES (1,'pbkdf2_sha256$216000$92hD1watI33i$fqJKvnojcmT/Stiq77Xy/tig233PZanWkirSZrGHEt8=','2021-01-26 00:19:12.637676',1,'superadmin','','','superadmin@gmail.com',1,1,'2020-08-27 14:54:25.630958',5),(3,'pbkdf2_sha256$180000$Ht8vYvRNBXBR$Lkd8HQ6LZbQLNRDIm+uZo31y0+uA4OXyLS97ibLz6L0=','2020-12-22 19:43:01.010249',0,'Kinjal777','Kinjal','Trivedi','kinju1220@gmail.com',0,1,'2020-08-27 16:12:28.000000',4),(8,'pbkdf2_sha256$180000$xMjIf3WB38lu$dCgF/2l0jhKTJsvReJUGeyae8g5erCb8HJx7+77XXhw=',NULL,0,'Sara','Sara','William','sara@gmail.com',0,1,'2020-09-29 15:40:49.000000',4),(9,'pbkdf2_sha256$216000$Z8jREFEbtCyl$c1Ldocy/DLwlWLf5eLK5x8jApwfSJ6m1kVwyGnSYLNE=','2021-02-05 14:06:12.990937',0,'Thomas','Thomas','Greco','tom@gmail.com',0,1,'2020-09-29 15:45:17.000000',4),(10,'pbkdf2_sha256$180000$tPgtt27hLm0M$hTPlga/pgxXZKvL9HBR0jhYxeJClBTlHW7KB7xJVt88=','2020-10-05 15:21:32.008256',0,'Jim','Jim','Carie','jim@gmail.com',0,1,'2020-10-01 18:20:58.000000',4),(20,'pbkdf2_sha256$180000$2eDXQrHJT8Ek$lOcD9QrbErfsKVIdQNF9gDGlOtqMHiqBedfCLhJ1wgQ=','2020-10-08 19:21:26.792373',0,'KinjalRef','KinjalRef','TrivediRef','chaudharykinjal_1987@yahoo.com',0,1,'2020-10-08 19:00:53.000000',4),(21,'pbkdf2_sha256$216000$6piXHrpCLS8t$JkEt3uP3uWl056GyVm4oipBdnHjXjk/+Yflek/lYgRw=','2021-01-08 11:44:26.387900',0,'adminone','Admin','One','adminone@gmail.com',0,1,'2021-01-04 11:52:54.827283',1),(22,'pbkdf2_sha256$180000$bCUac6s8Gmgo$HMhX7mTEDFFK5w54PGABC3Z/nz2ovZwSK5G2sjLiLmg=',NULL,0,'admintwo','Admin','Two','admintwo@gmail.com',0,1,'2021-01-04 11:53:55.461678',1),(23,'pbkdf2_sha256$216000$1HpXJPrRk98e$IWBpZ5anIUNZm85oi9lGfY/hKlZz7HgaO3lyuFj5dEQ=',NULL,1,'admin','','','admin@gmail.com',1,1,'2021-01-05 12:42:12.087122',NULL),(49,'pbkdf2_sha256$216000$gxV96yEtILfD$jp7lGkI0M4X7IN99mtpOvCr5tqYD3lFprzseAqCZ/k0=',NULL,0,'Client3','Client','three','client3@gmail.com',0,1,'2021-01-07 19:28:28.000000',4),(73,'pbkdf2_sha256$216000$YMIlONNthYC8$VHpNiWCbHJc5RFNN0ihtd54GXvbylR66wOY2o/X7Mvc=','2021-01-08 11:40:09.047626',1,'debbie.martin@manorpharmacygroup.co.uk',' Debbie',' Martin','debbie.martin@manorpharmacygroup.co.uk',1,1,'2021-01-08 11:37:45.000000',5),(77,'pbkdf2_sha256$216000$hFLCTu9F9fBw$pdZauh7SJOiUYp/mEuwn6M7OgPTyn57jiDhdvToKNgo=','2021-01-23 14:48:36.694613',0,'anujpalimkar@gmail.com','Anuj','Palimkar','anujpalimkar@gmail.com',1,1,'2021-01-15 14:20:25.000000',2),(78,'pbkdf2_sha256$216000$ly3Q3kDvyZRq$uY9moncNN26L8SnipVHemjpw85aED0OZ3ylLOHZb09Y=','2021-02-10 10:56:57.585462',0,'anujpalimkar14101993@gmail.com','Anuj','Palimkar','anujpalimkar14101993@gmail.com',1,1,'2021-01-15 14:32:19.000000',2),(79,'pbkdf2_sha256$216000$sZOCyNoYIets$o7rG7CbK9/3+sTn8U+3YRG82alVft7lhc8MsJjXnOUE=','2021-01-26 00:23:22.072762',0,'admintest@gmail.com',' admin',' test','admintest@gmail.com',1,1,'2021-01-26 00:22:44.000000',1);
+INSERT INTO `adminpanel_user` VALUES (1,'pbkdf2_sha256$216000$92hD1watI33i$fqJKvnojcmT/Stiq77Xy/tig233PZanWkirSZrGHEt8=','2021-01-26 00:19:12.637676',1,'superadmin','','','superadmin@gmail.com',1,1,'2020-08-27 14:54:25.630958',5),(3,'pbkdf2_sha256$180000$Ht8vYvRNBXBR$Lkd8HQ6LZbQLNRDIm+uZo31y0+uA4OXyLS97ibLz6L0=','2020-12-22 19:43:01.010249',0,'Kinjal777','Kinjal','Trivedi','kinju1220@gmail.com',0,1,'2020-08-27 16:12:28.000000',4),(8,'pbkdf2_sha256$180000$xMjIf3WB38lu$dCgF/2l0jhKTJsvReJUGeyae8g5erCb8HJx7+77XXhw=',NULL,0,'Sara','Sara','William','sara@gmail.com',0,1,'2020-09-29 15:40:49.000000',4),(9,'pbkdf2_sha256$216000$Z8jREFEbtCyl$c1Ldocy/DLwlWLf5eLK5x8jApwfSJ6m1kVwyGnSYLNE=','2021-03-05 14:21:24.204042',0,'Thomas','Thomas','Greco','tom@gmail.com',0,1,'2020-09-29 15:45:17.000000',4),(10,'pbkdf2_sha256$180000$tPgtt27hLm0M$hTPlga/pgxXZKvL9HBR0jhYxeJClBTlHW7KB7xJVt88=','2020-10-05 15:21:32.008256',0,'Jim','Jim','Carie','jim@gmail.com',0,1,'2020-10-01 18:20:58.000000',4),(20,'pbkdf2_sha256$180000$2eDXQrHJT8Ek$lOcD9QrbErfsKVIdQNF9gDGlOtqMHiqBedfCLhJ1wgQ=','2020-10-08 19:21:26.792373',0,'KinjalRef','KinjalRef','TrivediRef','chaudharykinjal_1987@yahoo.com',0,1,'2020-10-08 19:00:53.000000',4),(21,'pbkdf2_sha256$216000$6piXHrpCLS8t$JkEt3uP3uWl056GyVm4oipBdnHjXjk/+Yflek/lYgRw=','2021-01-08 11:44:26.387900',0,'adminone','Admin','One','adminone@gmail.com',0,1,'2021-01-04 11:52:54.827283',1),(22,'pbkdf2_sha256$180000$bCUac6s8Gmgo$HMhX7mTEDFFK5w54PGABC3Z/nz2ovZwSK5G2sjLiLmg=',NULL,0,'admintwo','Admin','Two','admintwo@gmail.com',0,1,'2021-01-04 11:53:55.461678',1),(23,'pbkdf2_sha256$216000$1HpXJPrRk98e$IWBpZ5anIUNZm85oi9lGfY/hKlZz7HgaO3lyuFj5dEQ=',NULL,1,'admin','','','admin@gmail.com',1,1,'2021-01-05 12:42:12.087122',NULL),(49,'pbkdf2_sha256$216000$gxV96yEtILfD$jp7lGkI0M4X7IN99mtpOvCr5tqYD3lFprzseAqCZ/k0=',NULL,0,'Client3','Client','three','client3@gmail.com',0,1,'2021-01-07 19:28:28.000000',4),(73,'pbkdf2_sha256$216000$YMIlONNthYC8$VHpNiWCbHJc5RFNN0ihtd54GXvbylR66wOY2o/X7Mvc=','2021-01-08 11:40:09.047626',1,'debbie.martin@manorpharmacygroup.co.uk',' Debbie',' Martin','debbie.martin@manorpharmacygroup.co.uk',1,1,'2021-01-08 11:37:45.000000',5),(77,'pbkdf2_sha256$216000$hFLCTu9F9fBw$pdZauh7SJOiUYp/mEuwn6M7OgPTyn57jiDhdvToKNgo=','2021-01-23 14:48:36.694613',0,'anujpalimkar@gmail.com','Anuj','Palimkar','anujpalimkar@gmail.com',1,1,'2021-01-15 14:20:25.000000',2),(78,'pbkdf2_sha256$216000$ly3Q3kDvyZRq$uY9moncNN26L8SnipVHemjpw85aED0OZ3ylLOHZb09Y=','2021-03-05 14:23:24.048367',0,'anujpalimkar14101993@gmail.com','Anuj','Palimkar','anujpalimkar14101993@gmail.com',1,1,'2021-01-15 14:32:19.000000',2),(79,'pbkdf2_sha256$216000$sZOCyNoYIets$o7rG7CbK9/3+sTn8U+3YRG82alVft7lhc8MsJjXnOUE=','2021-01-26 00:23:22.072762',0,'admintest@gmail.com',' admin',' test','admintest@gmail.com',1,1,'2021-01-26 00:22:44.000000',1);
 /*!40000 ALTER TABLE `adminpanel_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -861,17 +861,17 @@ CREATE TABLE `appointmentdetail` (
   `idAppointmentDetail` int NOT NULL AUTO_INCREMENT,
   `ClientId` int NOT NULL,
   `PractitionerId` int NOT NULL,
-  `CalendarSlotId` int NOT NULL,
   `AppointmentStatus` varchar(45) NOT NULL,
   `RecommendationId` int DEFAULT NULL,
+  `AppointmentDate` date DEFAULT NULL,
+  `StartTime` time DEFAULT NULL,
+  `EndTime` time DEFAULT NULL,
   PRIMARY KEY (`idAppointmentDetail`),
   KEY `ClientId_idx` (`ClientId`),
   KEY `PractitionerId_idx` (`PractitionerId`),
-  KEY `CalendarSlotId_idx` (`CalendarSlotId`),
-  CONSTRAINT `CalendarSlotId` FOREIGN KEY (`CalendarSlotId`) REFERENCES `calendarslots` (`idCalendarSlots`),
   CONSTRAINT `ClientId` FOREIGN KEY (`ClientId`) REFERENCES `adminpanel_customer` (`Customer_Id`),
   CONSTRAINT `idPractitioner` FOREIGN KEY (`PractitionerId`) REFERENCES `adminpanel_practitioner` (`Practitioner_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -880,6 +880,7 @@ CREATE TABLE `appointmentdetail` (
 
 LOCK TABLES `appointmentdetail` WRITE;
 /*!40000 ALTER TABLE `appointmentdetail` DISABLE KEYS */;
+INSERT INTO `appointmentdetail` VALUES (30,7,26,'Cancelled',NULL,'2021-02-25','09:00:00','10:00:00'),(31,7,26,'Cancelled',NULL,'2021-02-25','09:00:00','10:00:00'),(32,7,26,'Cancelled',NULL,'2021-03-03','10:30:00','12:00:00'),(33,7,26,'Cancelled',NULL,'2021-03-03','11:30:00','12:30:00'),(34,7,26,'Cancelled',NULL,'2021-03-03','10:30:00','11:00:00'),(35,7,26,'Cancelled',NULL,'2021-03-03','10:00:00','12:00:00'),(36,7,26,'Cancelled',NULL,'2021-02-25','09:00:00','10:00:00'),(37,7,26,'Cancelled',NULL,'2021-02-25','09:00:00','10:00:00'),(38,7,26,'Cancelled',NULL,'2021-02-22','09:00:00','10:30:00'),(39,7,26,'Cancelled',NULL,'2021-02-23','10:00:00','10:30:00'),(40,7,26,'Cancelled',NULL,'2021-02-25','10:00:00','10:30:00'),(41,7,26,'Cancelled',NULL,'2021-02-24','11:00:00','11:30:00'),(42,7,26,'Cancelled',NULL,'2021-02-22','09:00:00','10:30:00'),(43,7,26,'Cancelled',NULL,'2021-02-26','10:30:00','11:00:00'),(44,7,26,'Cancelled',NULL,'2021-02-21','10:30:00','11:00:00'),(45,7,26,'Cancelled',NULL,'2021-02-23','11:30:00','12:00:00'),(46,7,26,'Cancelled',NULL,'2021-02-25','18:00:00','18:30:00'),(47,7,26,'Cancelled',NULL,'2021-02-25','18:30:00','19:00:00'),(48,7,26,'Cancelled',NULL,'2021-02-25','19:00:00','19:30:00'),(49,7,26,'Cancelled',NULL,'2021-02-22','09:00:00','09:30:00'),(50,7,26,'Cancelled',NULL,'2021-02-22','09:00:00','10:00:00'),(51,7,26,'Cancelled',NULL,'2021-02-25','10:00:00','10:30:00'),(52,7,26,'Cancelled',NULL,'2021-02-22','10:00:00','10:30:00'),(53,7,26,'Cancelled',NULL,'2021-02-26','10:30:00','11:00:00'),(54,7,26,'Cancelled',NULL,'2021-03-03','12:00:00','13:00:00'),(55,7,26,'Cancelled',NULL,'2021-02-25','18:30:00','20:00:00'),(56,7,26,'Cancelled',NULL,'2021-03-05','12:00:00','13:00:00'),(57,7,26,'Cancelled',NULL,'2021-03-04','10:00:00','11:00:00'),(58,7,26,'Cancelled',NULL,'2021-03-05','11:00:00','12:30:00'),(59,7,26,'Cancelled',NULL,'2021-03-04','11:00:00','12:30:00'),(60,7,26,'Cancelled',NULL,'2021-03-05','11:30:00','12:00:00'),(61,7,26,'Cancelled',NULL,'2021-03-05','09:30:00','10:30:00'),(62,7,26,'Cancelled',NULL,'2021-03-05','13:00:00','13:30:00'),(63,7,26,'Cancelled',NULL,'2021-03-05','14:00:00','15:00:00'),(64,7,26,'Cancelled',NULL,'2021-03-05','16:00:00','16:30:00'),(65,7,26,'Cancelled',NULL,'2021-03-04','13:00:00','13:30:00'),(66,7,26,'Cancelled',NULL,'2021-03-04','13:30:00','14:00:00'),(67,7,26,'Cancelled',NULL,'2021-03-05','15:00:00','15:30:00'),(68,7,26,'Cancelled',NULL,'2021-03-04','09:00:00','10:00:00'),(69,7,26,'Cancelled',NULL,'2021-03-03','09:30:00','10:00:00'),(70,7,26,'Cancelled',NULL,'2021-03-03','09:30:00','10:00:00'),(71,7,26,'Cancelled',NULL,'2021-02-23','10:00:00','10:30:00'),(72,7,26,'Cancelled',NULL,'2021-02-24','11:00:00','11:30:00'),(73,7,26,'Cancelled',NULL,'2021-02-23','11:30:00','12:00:00'),(74,7,26,'Cancelled',NULL,'2021-02-21','10:30:00','11:00:00'),(75,7,26,'Cancelled',NULL,'2021-02-25','18:00:00','18:30:00'),(76,7,26,'Cancelled',NULL,'2021-02-25','20:00:00','20:30:00'),(77,7,26,'Cancelled',NULL,'2021-03-05','10:30:00','11:00:00'),(78,7,26,'Cancelled',NULL,'2021-03-05','13:30:00','15:00:00'),(79,7,26,'Cancelled',NULL,'2021-03-06','12:30:00','13:30:00'),(80,7,26,'Occurred',NULL,'2021-02-21','10:30:00','11:00:00'),(81,7,26,'Occurred',2,'2021-02-23','10:00:00','10:30:00'),(82,7,26,'Occurred',4,'2021-02-23','11:30:00','12:00:00'),(83,7,26,'Occurred',3,'2021-02-24','11:00:00','11:30:00'),(84,7,26,'Occurred',1,'2021-03-06','09:00:00','11:00:00'),(85,7,26,'Occurred',8,'2021-03-06','12:00:00','13:00:00'),(86,7,26,'Occurred',6,'2021-03-05','10:00:00','10:30:00'),(87,7,26,'Occurred',5,'2021-03-04','09:00:00','09:30:00'),(88,7,26,'Cancelled',NULL,'2021-03-03','09:30:00','10:00:00'),(89,7,26,'Cancelled',NULL,'2021-03-03','11:00:00','11:30:00'),(90,7,26,'Occurred',7,'2021-03-04','09:30:00','10:00:00'),(91,7,26,'Cancelled',NULL,'2021-03-05','10:30:00','11:00:00'),(92,7,26,'Cancelled',NULL,'2021-03-05','15:00:00','16:00:00'),(93,7,26,'Cancelled',NULL,'2021-03-03','14:30:00','15:00:00'),(94,7,26,'Cancelled',NULL,'2021-03-02','14:30:00','15:00:00'),(95,7,26,'Cancelled',NULL,'2021-03-03','10:00:00','10:30:00'),(96,7,26,'Cancelled',NULL,'2021-03-03','16:00:00','16:30:00'),(97,7,26,'Cancelled',NULL,'2021-03-03','10:00:00','10:30:00'),(98,7,26,'Cancelled',NULL,'2021-03-03','18:00:00','18:30:00'),(99,7,26,'Cancelled',NULL,'2021-03-03','09:00:00','09:30:00'),(100,7,26,'Cancelled',NULL,'2021-03-04','13:00:00','13:30:00'),(101,7,26,'Cancelled',NULL,'2021-03-03','14:30:00','15:00:00'),(102,7,26,'Cancelled',NULL,'2021-03-04','15:00:00','15:30:00'),(103,7,26,'Cancelled',NULL,'2021-03-05','15:30:00','16:00:00'),(104,7,26,'Cancelled',NULL,'2021-03-04','11:30:00','12:00:00'),(105,7,26,'Cancelled',NULL,'2021-03-06','15:30:00','16:30:00'),(106,7,26,'Cancelled',NULL,'2021-03-04','09:30:00','10:00:00'),(107,7,26,'Cancelled',NULL,'2021-03-04','12:00:00','12:30:00'),(108,7,26,'Cancelled',NULL,'2021-03-03','15:00:00','15:30:00'),(109,7,26,'Cancelled',NULL,'2021-03-03','09:00:00','09:30:00'),(110,7,26,'Cancelled',NULL,'2021-03-04','13:00:00','13:30:00'),(111,7,26,'Cancelled',NULL,'2021-03-04','09:30:00','10:00:00'),(112,7,26,'Cancelled',NULL,'2021-03-03','15:00:00','15:30:00'),(113,7,26,'Cancelled',NULL,'2021-03-03','09:00:00','09:30:00'),(114,7,26,'Cancelled',NULL,'2021-03-03','15:30:00','16:00:00'),(115,7,26,'Cancelled',NULL,'2021-03-03','10:30:00','11:00:00'),(116,7,26,'Cancelled',NULL,'2021-03-03','17:00:00','17:30:00'),(117,7,26,'Cancelled',NULL,'2021-03-03','12:30:00','13:00:00'),(118,7,26,'Cancelled',NULL,'2021-03-03','15:00:00','15:30:00'),(119,7,26,'Cancelled',NULL,'2021-03-03','14:30:00','15:00:00'),(120,7,26,'Cancelled',NULL,'2021-03-03','15:30:00','16:00:00'),(121,7,26,'Cancelled',NULL,'2021-03-03','12:00:00','12:30:00'),(122,7,26,'Cancelled',NULL,'2021-03-03','17:00:00','17:30:00'),(123,7,26,'Cancelled',NULL,'2021-03-03','12:30:00','13:00:00'),(124,7,26,'Cancelled',NULL,'2021-03-03','18:00:00','18:30:00'),(125,7,26,'Cancelled',NULL,'2021-03-03','11:30:00','12:00:00'),(126,7,26,'Cancelled',NULL,'2021-03-03','16:30:00','17:00:00'),(127,7,26,'Cancelled',NULL,'2021-03-03','12:00:00','12:30:00'),(128,7,26,'Cancelled',NULL,'2021-03-03','17:00:00','17:30:00'),(129,7,26,'Cancelled',NULL,'2021-03-03','14:30:00','15:00:00'),(130,7,26,'Cancelled',NULL,'2021-03-03','12:00:00','12:30:00'),(131,7,26,'Cancelled',NULL,'2021-03-03','17:30:00','18:00:00'),(132,7,26,'Cancelled',NULL,'2021-03-03','10:00:00','10:30:00'),(133,7,26,'Cancelled',NULL,'2021-03-03','16:00:00','16:30:00'),(134,7,26,'Cancelled',NULL,'2021-03-03','12:00:00','12:30:00'),(135,7,26,'Cancelled',NULL,'2021-03-03','17:30:00','18:00:00'),(136,7,26,'Cancelled',NULL,'2021-03-03','11:00:00','11:30:00'),(137,7,26,'Cancelled',NULL,'2021-03-03','12:30:00','13:00:00'),(138,7,26,'Cancelled',NULL,'2021-03-03','19:30:00','20:00:00'),(139,7,26,'Cancelled',NULL,'2021-03-03','11:00:00','11:30:00'),(140,7,26,'Cancelled',NULL,'2021-03-03','14:00:00','14:30:00'),(141,7,26,'Cancelled',NULL,'2021-03-03','09:00:00','09:30:00'),(142,7,26,'Cancelled',NULL,'2021-03-03','17:00:00','17:30:00'),(143,7,26,'Cancelled',NULL,'2021-03-03','09:00:00','09:30:00'),(144,7,26,'Cancelled',NULL,'2021-03-03','17:30:00','18:00:00'),(145,7,26,'Cancelled',NULL,'2021-03-03','14:30:00','15:00:00'),(146,7,26,'Cancelled',NULL,'2021-03-03','09:00:00','09:30:00'),(147,7,26,'Cancelled',NULL,'2021-03-03','17:00:00','17:30:00'),(148,7,26,'Cancelled',NULL,'2021-03-03','09:30:00','10:00:00'),(149,7,26,'Cancelled',NULL,'2021-03-03','17:00:00','17:30:00'),(150,7,26,'Cancelled',NULL,'2021-03-03','14:30:00','15:00:00'),(151,7,26,'Cancelled',NULL,'2021-03-06','18:00:00','18:30:00'),(152,7,26,'Booked',NULL,'2021-03-06','11:00:00','12:00:00');
 /*!40000 ALTER TABLE `appointmentdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -979,12 +980,15 @@ CREATE TABLE `calendarslots` (
   `slotId` int NOT NULL,
   `practitionerId` int NOT NULL,
   `isBooked` tinyint DEFAULT '0',
+  `AppointmentId` int DEFAULT NULL,
   PRIMARY KEY (`idCalendarSlots`),
   KEY `slotId_idx` (`slotId`),
   KEY `practitionerId_idx` (`practitionerId`),
+  KEY `appointmentid_idx` (`AppointmentId`),
+  CONSTRAINT `appointmentid` FOREIGN KEY (`AppointmentId`) REFERENCES `appointmentdetail` (`idAppointmentDetail`) ON DELETE SET NULL,
   CONSTRAINT `practitionerId` FOREIGN KEY (`practitionerId`) REFERENCES `adminpanel_practitioner` (`Practitioner_Id`) ON DELETE CASCADE,
   CONSTRAINT `slotId` FOREIGN KEY (`slotId`) REFERENCES `slotdescription` (`idslotdescription`)
-) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=319 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -993,7 +997,7 @@ CREATE TABLE `calendarslots` (
 
 LOCK TABLES `calendarslots` WRITE;
 /*!40000 ALTER TABLE `calendarslots` DISABLE KEYS */;
-INSERT INTO `calendarslots` VALUES (175,'2021-02-25',1,1,26,0),(176,'2021-02-25',1,2,26,0),(177,'2021-02-25',1,3,26,0),(178,'2021-02-22',1,1,26,0),(179,'2021-02-22',1,2,26,0),(180,'2021-02-22',1,3,26,0),(181,'2021-02-23',1,6,26,0),(182,'2021-02-26',1,4,26,0),(183,'2021-02-23',1,3,26,0),(185,'2021-02-24',1,5,26,0),(186,'2021-02-21',1,4,26,0),(188,'2021-02-25',1,19,26,0),(189,'2021-02-25',1,20,26,0),(190,'2021-02-25',1,21,26,0),(191,'2021-02-25',1,22,26,0),(192,'2021-02-25',1,23,26,0);
+INSERT INTO `calendarslots` VALUES (181,'2021-02-23',0,6,26,0,82),(183,'2021-02-23',0,3,26,0,81),(185,'2021-02-24',0,5,26,0,83),(186,'2021-02-21',0,4,26,0,80),(188,'2021-02-25',1,19,26,0,75),(192,'2021-02-25',1,23,26,0,76),(201,'2021-03-04',0,1,26,0,87),(204,'2021-03-05',0,3,26,0,86),(216,'2021-03-05',1,15,26,0,64),(217,'2021-03-05',1,2,26,0,61),(225,'2021-03-04',1,10,26,0,66),(226,'2021-03-06',0,1,26,0,84),(227,'2021-03-06',0,2,26,0,84),(228,'2021-03-06',0,3,26,0,84),(229,'2021-03-06',0,4,26,0,84),(230,'2021-03-06',1,5,26,1,152),(231,'2021-03-06',1,6,26,1,152),(232,'2021-03-06',0,7,26,0,85),(233,'2021-03-06',0,8,26,0,85),(234,'2021-03-06',1,9,26,0,79),(235,'2021-03-10',1,1,26,0,NULL),(236,'2021-03-10',1,2,26,0,NULL),(237,'2021-03-10',1,3,26,0,NULL),(238,'2021-03-10',1,4,26,0,NULL),(239,'2021-03-10',1,5,26,0,NULL),(240,'2021-03-10',1,6,26,0,NULL),(241,'2021-03-10',1,7,26,0,NULL),(242,'2021-03-10',1,8,26,0,NULL),(243,'2021-03-10',1,9,26,0,NULL),(244,'2021-03-10',1,10,26,0,NULL),(245,'2021-03-10',1,11,26,0,NULL),(246,'2021-03-10',1,12,26,0,NULL),(247,'2021-03-10',1,13,26,0,NULL),(248,'2021-03-10',1,14,26,0,NULL),(249,'2021-03-10',1,15,26,0,NULL),(250,'2021-03-10',1,16,26,0,NULL),(251,'2021-03-10',1,17,26,0,NULL),(252,'2021-03-10',1,18,26,0,NULL),(253,'2021-03-10',1,19,26,0,NULL),(254,'2021-03-10',1,20,26,0,NULL),(255,'2021-03-10',1,21,26,0,NULL),(256,'2021-03-10',1,22,26,0,NULL),(257,'2021-03-10',1,23,26,0,NULL),(258,'2021-03-10',1,24,26,0,NULL),(317,'2021-03-05',1,5,26,0,NULL),(318,'2021-03-06',1,19,26,0,151);
 /*!40000 ALTER TABLE `calendarslots` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1106,7 +1110,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('33m35ujg48b5rj4xathhhliigo5ixlvx','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-27 13:55:03.016594'),('3v538c5urum114q6e5euehx32ey3bt20','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-10 16:56:43.242345'),('4ru5t5cl71jbcbjgcazc911vql2nnw2b','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2021-01-18 11:51:16.985283'),('5ueybb6wr0ln84wgp9cpexrtbojm8o6g','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-12-28 19:03:32.864741'),('6ue134c45khzeau4ejc0whizi0mtklw6','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:11:57.544566'),('c80ibb7joybhzo611yw7hq4iuqf7ny59','.eJxVjMsKQiEUAP_FdYSKz7b1C3ctRz3ipa6Gj1X0790gopYzA_MgDubIbnZsbo3kRCw5_DoP4YrlHSBua7lDwdvxPPuo27L3C4baYNT2cV_-v2ToeV8kKqwXBrlPFj0zSjPmUwIpuDRScyUABUaaVGSKe0211CygRmHRmoDk-QJ9KDqi:1l5AKw:UWxzrwndWNzxt6sgrcqKT_1ugZli6Czn7MqahHlr2K4','2021-02-11 16:40:02.329116'),('evvr4qofrj8ug6qq3fdh0zpnqnjidu8u','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:14:48.715681'),('iw29ablq0fqa0bomscq0n7x5kz64y5yh','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-09-22 10:36:25.337835'),('jjorvwst44x42ya6fno288x3vbc5gywa','.eJxVjMsKwjAQAP8lZ5GkeW286i94LtvshhZtWpLmJP67FUT0ODMwD9Fj28a-VS79ROIkPIjDrxww3ji_C9I85RUz34_nVrdlvu79wnEpuC3l4778fxmxjvuCUjDGGhWMJiDnHHSDh9TF5BkiIQVWMVhIRrKW0EmbHGiNxjIrp614vgCbLzpS:1l0QAu:tyWvAD3f2U9S6GlwAvdokeAz9i4RuDetVCe7DRIlF7w','2021-01-29 14:34:04.015101'),('olw00s199d3lr3faqu102sprjf2ozsdi','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-12-25 11:56:39.408282'),('q7kwdwprqiyomx0z25t76s6pslbgov47','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-15 19:43:08.671738'),('qmk1yhlh726t7dijj5rnxwrm3vj2olct','.eJxVjMsKwjAQAP8lZ5GkeW286i94LtvshhZtWpLmJP67FUT0ODMwD9Fj28a-VS79ROIkPIjDrxww3ji_C9I85RUz34_nVrdlvu79wnEpuC3l4778fxmxjvuCUjDGGhWMJiDnHHSDh9TF5BkiIQVWMVhIRrKW0EmbHGiNxjIrp614vgCbLzpS:1l9nB4:hLIC-5pUP-uhuafYvsFNo7feOWNE6twn1c0Kra03klQ','2021-02-24 10:56:58.986088'),('ryqo1cchem7k5qu6s6k33hx7rubmfmck','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-09-24 10:19:01.091836'),('s0yx9ebplq336nocsmbsd42xah6q5iwe','MDI5ZTBkZDY1MTRjM2IzM2VmOTNlNWM3MWNjMjg3NGFkYmQxYmM2Mzp7Il9hdXRoX3VzZXJfaWQiOiI5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImI5N2RmNmU4YzIzYTUxMWNhMWNkNmNlZDRmNWQzMjI1ZDgzYjRjY2EifQ==','2020-10-13 15:56:59.698156'),('s5vlmemadty4jrellc9qoi10wutkgl2f','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:31:39.082708'),('xm8snd2898ew1chwiyl9bc9f6y7jdxn1','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-23 18:54:02.568233');
+INSERT INTO `django_session` VALUES ('33m35ujg48b5rj4xathhhliigo5ixlvx','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-27 13:55:03.016594'),('3v538c5urum114q6e5euehx32ey3bt20','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-10 16:56:43.242345'),('4ru5t5cl71jbcbjgcazc911vql2nnw2b','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2021-01-18 11:51:16.985283'),('5ueybb6wr0ln84wgp9cpexrtbojm8o6g','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-12-28 19:03:32.864741'),('6ue134c45khzeau4ejc0whizi0mtklw6','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:11:57.544566'),('c80ibb7joybhzo611yw7hq4iuqf7ny59','.eJxVjMsKQiEUAP_FdYSKz7b1C3ctRz3ipa6Gj1X0790gopYzA_MgDubIbnZsbo3kRCw5_DoP4YrlHSBua7lDwdvxPPuo27L3C4baYNT2cV_-v2ToeV8kKqwXBrlPFj0zSjPmUwIpuDRScyUABUaaVGSKe0211CygRmHRmoDk-QJ9KDqi:1l5AKw:UWxzrwndWNzxt6sgrcqKT_1ugZli6Czn7MqahHlr2K4','2021-02-11 16:40:02.329116'),('evvr4qofrj8ug6qq3fdh0zpnqnjidu8u','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:14:48.715681'),('iw29ablq0fqa0bomscq0n7x5kz64y5yh','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-09-22 10:36:25.337835'),('jjorvwst44x42ya6fno288x3vbc5gywa','.eJxVjMsKwjAQAP8lZ5GkeW286i94LtvshhZtWpLmJP67FUT0ODMwD9Fj28a-VS79ROIkPIjDrxww3ji_C9I85RUz34_nVrdlvu79wnEpuC3l4778fxmxjvuCUjDGGhWMJiDnHHSDh9TF5BkiIQVWMVhIRrKW0EmbHGiNxjIrp614vgCbLzpS:1l0QAu:tyWvAD3f2U9S6GlwAvdokeAz9i4RuDetVCe7DRIlF7w','2021-01-29 14:34:04.015101'),('olw00s199d3lr3faqu102sprjf2ozsdi','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-12-25 11:56:39.408282'),('q7kwdwprqiyomx0z25t76s6pslbgov47','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-15 19:43:08.671738'),('ryqo1cchem7k5qu6s6k33hx7rubmfmck','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-09-24 10:19:01.091836'),('s0yx9ebplq336nocsmbsd42xah6q5iwe','MDI5ZTBkZDY1MTRjM2IzM2VmOTNlNWM3MWNjMjg3NGFkYmQxYmM2Mzp7Il9hdXRoX3VzZXJfaWQiOiI5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImI5N2RmNmU4YzIzYTUxMWNhMWNkNmNlZDRmNWQzMjI1ZDgzYjRjY2EifQ==','2020-10-13 15:56:59.698156'),('s5vlmemadty4jrellc9qoi10wutkgl2f','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:31:39.082708'),('xm8snd2898ew1chwiyl9bc9f6y7jdxn1','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-23 18:54:02.568233'),('zbwgkdgvi95u7hxdtmcq1omopzvmtzgq','.eJxVjMsKwjAQAP8lZ5GkeW286i94LtvshhZtWpLmJP67FUT0ODMwD9Fj28a-VS79ROIkPIjDrxww3ji_C9I85RUz34_nVrdlvu79wnEpuC3l4778fxmxjvuCUjDGGhWMJiDnHHSDh9TF5BkiIQVWMVhIRrKW0EmbHGiNxjIrp614vgCbLzpS:1lIBMS:muc5XLJclO6LfAqO-3gdVCaMBAJgjGkr-q4sBmw6mlg','2021-03-19 14:23:24.185121');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1166,6 +1170,40 @@ INSERT INTO `gateway_merchant` VALUES (1,'Payzon-3664359','Aomw5aTom512','xnQsrg
 UNLOCK TABLES;
 
 --
+-- Table structure for table `recommendation`
+--
+
+DROP TABLE IF EXISTS `recommendation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `recommendation` (
+  `idRecommendation` int NOT NULL AUTO_INCREMENT,
+  `idappointment` int NOT NULL,
+  `idclient` int NOT NULL,
+  `idpractitioner` int NOT NULL,
+  `Diagnosis` varchar(5000) NOT NULL,
+  `DietRecommendation` varchar(5000) NOT NULL,
+  PRIMARY KEY (`idRecommendation`),
+  KEY `idclient_idx` (`idclient`),
+  KEY `idappointment_idx` (`idappointment`),
+  KEY `idpractitioner_idx` (`idpractitioner`),
+  CONSTRAINT `appointmentidkey` FOREIGN KEY (`idappointment`) REFERENCES `appointmentdetail` (`idAppointmentDetail`),
+  CONSTRAINT `clientidkey` FOREIGN KEY (`idclient`) REFERENCES `adminpanel_customer` (`Customer_Id`),
+  CONSTRAINT `practitioneridkey` FOREIGN KEY (`idpractitioner`) REFERENCES `adminpanel_practitioner` (`Practitioner_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recommendation`
+--
+
+LOCK TABLES `recommendation` WRITE;
+/*!40000 ALTER TABLE `recommendation` DISABLE KEYS */;
+INSERT INTO `recommendation` VALUES (1,84,7,26,'test36','testj'),(2,81,7,26,'Lorem Ipsum','Lorem Ipsum'),(3,83,7,26,'\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"','\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"'),(4,82,7,26,'\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"','\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"'),(5,87,7,26,'\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"','\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"'),(6,86,7,26,'\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"','\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"'),(7,90,7,26,'kakfk','sakdaslas'),(8,85,7,26,'test453','test2');
+/*!40000 ALTER TABLE `recommendation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `slotdescription`
 --
 
@@ -1197,6 +1235,29 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'prolongevity'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `addRecommendation` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addRecommendation`(IN appointmentidkey int, IN customeridkey int, IN practitioneridkey int, IN diagnosis VARCHAR(5000), IN recommendation VARCHAR(5000))
+BEGIN
+	INSERT INTO recommendation(idappointment, idclient, idpractitioner, Diagnosis, DietRecommendation) 
+    VALUES 
+    (appointmentidkey, customeridkey, practitioneridkey,diagnosis,recommendation);
+    
+    SELECT LAST_INSERT_ID();
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `bookappointment` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1207,14 +1268,12 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `bookappointment`(IN customeridkey int, IN practitioneridkey int, IN slotidkey int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `bookappointment`(IN customeridkey int, IN practitioneridkey int, IN appointmentdate DATE, IN starttime TIME,IN endtime TIME)
 BEGIN
-	INSERT INTO appointmentdetail(ClientId,PractitionerId,CalendarSlotId,AppointmentStatus) 
+	INSERT INTO appointmentdetail(ClientId,PractitionerId,AppointmentStatus,AppointmentDate,StartTime,EndTime) 
     VALUES 
-    (customeridkey, practitioneridkey, slotidkey, 'Booked');
-    UPDATE calendarslots
-    SET isBooked=1
-    WHERE idCalendarSlots=slotidkey;
+    (customeridkey, practitioneridkey,'Booked',appointmentdate,starttime,endtime);
+    SELECT LAST_INSERT_ID();
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1238,6 +1297,7 @@ BEGIN
 	INSERT INTO calendarslots(slotDate, isAvailable, slotId, practitionerId) 
     VALUES 
     (datein, TRUE, slotin, @pracID);
+    select @pracID;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1277,11 +1337,41 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `clientviewAvailableSlots`(IN userid int)
 BEGIN
-	select calendarslots.idCalendarSlots,calendarslots.slotDate, slotdescription.StartTime, slotdescription.EndTime
+	select calendarslots.idCalendarSlots,calendarslots.slotDate, slotdescription.StartTime, slotdescription.EndTime,
+	timestamp(calendarslots.slotDate,slotdescription.StartTime) as startdatetime,
+    timestamp(calendarslots.slotDate,slotdescription.EndTime) as enddatetime
 	from calendarslots inner join slotdescription 
 	on calendarslots.slotId=slotdescription.idslotdescription 
 	where calendarslots.isAvailable=1 AND practitionerId=userid AND calendarslots.isBooked=0
 	order by calendarslots.slotDate asc, slotdescription.StartTime asc;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `clientViewCalendarAppointment` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `clientViewCalendarAppointment`(IN useridkey int, IN practitioneridkey int)
+BEGIN
+	select appointmentdetail.idAppointmentDetail, appointmentdetail.AppointmentStatus,
+    CONCAT (adminpanel_practitioner.First_Name,' ', adminpanel_practitioner.Last_Name) AS fullname,
+    appointmentdetail.AppointmentDate,appointmentdetail.StartTime,appointmentdetail.EndTime,
+    timestamp(appointmentdetail.AppointmentDate,appointmentdetail.StartTime) as startdatetime,
+    timestamp(appointmentdetail.AppointmentDate,appointmentdetail.EndTime) as enddatetime
+	from appointmentdetail 
+    inner join adminpanel_practitioner 
+	on appointmentdetail.PractitionerId=adminpanel_practitioner.Practitioner_Id
+	where ClientId=useridkey AND PractitionerId=practitioneridkey AND appointmentdetail.AppointmentStatus='Booked'
+	order by appointmentdetail.AppointmentDate asc, appointmentdetail.StartTime asc;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1356,15 +1446,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteAppointment`(
 	IN idkey int
  )
 BEGIN
-DECLARE idslot int;
-SET @idslot := (SELECT CalendarSlotId FROM appointmentdetail WHERE idAppointmentDetail=idkey);
+SELECT idCalendarSlots, practitionerId from calendarslots WHERE AppointmentId=idkey;
+
 UPDATE appointmentdetail
 SET AppointmentStatus='Cancelled'
 WHERE idAppointmentDetail=idkey;
 
 UPDATE calendarslots
 SET isBooked=0
-where idCalendarSlots=@idslot;
+where AppointmentId=idkey ;
 
 END ;;
 DELIMITER ;
@@ -2153,6 +2243,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `getSlotId` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getSlotId`(IN startingTime TIME)
+BEGIN
+	select idslotdescription from slotdescription where StartTime=startingTime;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `GetSuperAdminList` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -2441,6 +2550,166 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `practitioner_viewRecommendationHistory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `practitioner_viewRecommendationHistory`(in userid int)
+BEGIN
+	Declare practitioneridkey int;
+    SET @practitioneridkey:=(SELECT Practitioner_Id from adminpanel_practitioner WHERE user_id=userid);
+	select appointmentdetail.idAppointmentDetail, appointmentdetail.AppointmentStatus,
+    CONCAT (adminpanel_customer.First_Name,' ', adminpanel_customer.Last_Name) AS fullname,
+    appointmentdetail.AppointmentDate,appointmentdetail.StartTime,appointmentdetail.EndTime,
+    recommendation.Diagnosis,recommendation.DietRecommendation,adminpanel_customer.Customer_Id,
+    recommendation.idRecommendation
+	from appointmentdetail 
+    inner join adminpanel_customer 
+	on appointmentdetail.ClientId=adminpanel_customer.Customer_Id
+    left join recommendation
+    on recommendation.idappointment=appointmentdetail.idAppointmentDetail
+	where PractitionerId=@practitioneridkey AND AppointmentStatus='Occurred'
+	order by appointmentdetail.AppointmentDate desc,appointmentdetail.StartTime desc ;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Reschedule_DeleteSlot` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Reschedule_DeleteSlot`(in appointmentkey int)
+BEGIN
+	SELECT practitionerId from appointmentdetail WHERE idAppointmentDetail=appointmentkey;
+	DELETE FROM calendarslots
+	WHERE AppointmentId=appointmentkey;
+    
+    UPDATE appointmentdetail
+    SET AppointmentStatus='Cancelled'
+	WHERE idAppointmentDetail=appointmentkey;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `updateAppointment` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateAppointment`(in idapptkey int)
+BEGIN
+select PractitionerId,AppointmentDate,StartTime,EndTime,CONCAT(adminpanel_practitioner.First_Name, ' ',adminpanel_practitioner.Last_Name)
+from appointmentdetail inner join adminpanel_practitioner
+on appointmentdetail.PractitionerId = adminpanel_practitioner.Practitioner_Id 
+where idAppointmentDetail=idapptkey;
+
+UPDATE appointmentdetail
+SET AppointmentStatus='Occurred'
+WHERE idAppointmentDetail=idapptkey;
+
+UPDATE calendarslots
+SET isBooked=0, isAvailable=0
+where AppointmentId=idapptkey ;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `updateAppointment_addRecommendation` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateAppointment_addRecommendation`(in apptidkey int,in reccomendationidkey int)
+BEGIN
+	UPDATE appointmentdetail
+	SET RecommendationId=reccomendationidkey
+	WHERE idAppointmentDetail=apptidkey;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `updateCalendarSlot` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateCalendarSlot`(IN slotdatekey DATE,IN slotidkey2 int,IN pracidkey int,IN appidkey int)
+BEGIN
+	Update calendarslots
+    SET AppointmentId=appidkey,
+    isBooked=1
+    WHERE
+    slotDate=slotdatekey AND slotId=slotidkey2 AND practitionerId=pracidkey;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `updateRecommendation` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateRecommendation`(in recidkey int, IN diagnosis VARCHAR(5000), IN planrecommendation VARCHAR(5000))
+BEGIN
+	Declare idapptkey int;
+    SET @idapptkey:=(SELECT idappointment from recommendation WHERE idRecommendation=recidkey);
+	select PractitionerId,AppointmentDate,StartTime,EndTime,CONCAT(adminpanel_practitioner.First_Name, ' ',adminpanel_practitioner.Last_Name)
+	from appointmentdetail inner join adminpanel_practitioner
+	on appointmentdetail.PractitionerId = adminpanel_practitioner.Practitioner_Id 
+	where idAppointmentDetail=@idapptkey;
+    
+    UPDATE recommendation
+    SET Diagnosis=diagnosis,DietRecommendation=planrecommendation
+    where idRecommendation=recidkey;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `updateSlot` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -2476,16 +2745,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `viewAppointment`(IN useridkey int)
 BEGIN
 	select appointmentdetail.idAppointmentDetail, appointmentdetail.AppointmentStatus,
     CONCAT (adminpanel_practitioner.First_Name,' ', adminpanel_practitioner.Last_Name) AS fullname,
-    calendarslots.slotDate,slotdescription.StartTime, slotdescription.EndTime
+    appointmentdetail.AppointmentDate,appointmentdetail.StartTime,appointmentdetail.EndTime,
+    recommendation.Diagnosis,recommendation.DietRecommendation
 	from appointmentdetail 
     inner join adminpanel_practitioner 
 	on appointmentdetail.PractitionerId=adminpanel_practitioner.Practitioner_Id
-    inner join calendarslots
-    on appointmentdetail.CalendarSlotId=calendarslots.idCalendarSlots
-    inner join slotdescription
-    on calendarslots.slotId=slotdescription.idslotdescription
+    left join recommendation
+    on recommendation.idappointment=appointmentdetail.idAppointmentDetail
 	where ClientId=useridkey
-	order by calendarslots.slotDate asc, slotdescription.StartTime asc;
+	order by appointmentdetail.idAppointmentDetail desc;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2534,20 +2802,43 @@ BEGIN
 	Declare pracId int;
     SET @pracID:=(SELECT Practitioner_Id from adminpanel_practitioner WHERE user_id=userid);
 	select appointmentdetail.idAppointmentDetail,appointmentdetail.AppointmentStatus,
-    calendarslots.idCalendarSlots,calendarslots.slotDate,
     adminpanel_customer.Customer_Id, concat(adminpanel_customer.First_Name,' ',adminpanel_customer.Last_Name) as fullname,
-    timestamp(calendarslots.slotDate,slotdescription.StartTime) as startdatetime,
-    timestamp(calendarslots.slotDate,slotdescription.EndTime) as enddatetime,
-    slotdescription.StartTime, slotdescription.EndTime
+    timestamp(appointmentdetail.AppointmentDate,appointmentdetail.StartTime) as startdatetime,
+    timestamp(appointmentdetail.AppointmentDate,appointmentdetail.EndTime) as enddatetime,
+    appointmentdetail.AppointmentDate, appointmentdetail.StartTime, appointmentdetail.EndTime
 	from appointmentdetail
-    inner join calendarslots
-    on appointmentdetail.CalendarSlotId=calendarslots.idCalendarSlots
     inner join adminpanel_customer
     on appointmentdetail.ClientId=adminpanel_customer.Customer_Id
-    inner join slotdescription
-    on calendarslots.slotId=slotdescription.idslotdescription
     where appointmentdetail.PractitionerId=@pracID and appointmentdetail.AppointmentStatus='Booked'
-	order by calendarslots.slotDate asc;
+	order by appointmentdetail.AppointmentDate desc;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `viewClientRecommendation` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `viewClientRecommendation`(IN userid int)
+BEGIN
+	select appointmentdetail.AppointmentDate, CONCAT(adminpanel_practitioner.First_Name, ' ',adminpanel_practitioner.Last_Name),CONCAT(adminpanel_customer.First_Name, ' ',adminpanel_customer.Last_Name),
+    recommendation.Diagnosis,recommendation.DietRecommendation
+	from recommendation inner join appointmentdetail
+	on recommendation.idappointment=appointmentdetail.idAppointmentDetail
+    inner join adminpanel_practitioner
+    on recommendation.idpractitioner=adminpanel_practitioner.Practitioner_Id
+    inner join adminpanel_customer
+    on recommendation.idclient=adminpanel_customer.Customer_Id
+	where recommendation.idclient=userid
+	order by appointmentdetail.AppointmentDate desc;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2607,4 +2898,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-10 12:35:13
+-- Dump completed on 2021-03-10 12:16:53
