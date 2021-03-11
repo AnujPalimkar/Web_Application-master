@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: localhost    Database: prolongevity
+-- Host: localhost    Database: prolongevity_test
 -- ------------------------------------------------------
 -- Server version	8.0.21
 
@@ -764,7 +764,7 @@ CREATE TABLE `adminpanel_user` (
 
 LOCK TABLES `adminpanel_user` WRITE;
 /*!40000 ALTER TABLE `adminpanel_user` DISABLE KEYS */;
-INSERT INTO `adminpanel_user` VALUES (1,'pbkdf2_sha256$216000$92hD1watI33i$fqJKvnojcmT/Stiq77Xy/tig233PZanWkirSZrGHEt8=','2021-01-26 00:19:12.637676',1,'superadmin','','','superadmin@gmail.com',1,1,'2020-08-27 14:54:25.630958',5),(3,'pbkdf2_sha256$180000$Ht8vYvRNBXBR$Lkd8HQ6LZbQLNRDIm+uZo31y0+uA4OXyLS97ibLz6L0=','2020-12-22 19:43:01.010249',0,'Kinjal777','Kinjal','Trivedi','kinju1220@gmail.com',0,1,'2020-08-27 16:12:28.000000',4),(8,'pbkdf2_sha256$180000$xMjIf3WB38lu$dCgF/2l0jhKTJsvReJUGeyae8g5erCb8HJx7+77XXhw=',NULL,0,'Sara','Sara','William','sara@gmail.com',0,1,'2020-09-29 15:40:49.000000',4),(9,'pbkdf2_sha256$216000$Z8jREFEbtCyl$c1Ldocy/DLwlWLf5eLK5x8jApwfSJ6m1kVwyGnSYLNE=','2021-03-05 14:21:24.204042',0,'Thomas','Thomas','Greco','tom@gmail.com',0,1,'2020-09-29 15:45:17.000000',4),(10,'pbkdf2_sha256$180000$tPgtt27hLm0M$hTPlga/pgxXZKvL9HBR0jhYxeJClBTlHW7KB7xJVt88=','2020-10-05 15:21:32.008256',0,'Jim','Jim','Carie','jim@gmail.com',0,1,'2020-10-01 18:20:58.000000',4),(20,'pbkdf2_sha256$180000$2eDXQrHJT8Ek$lOcD9QrbErfsKVIdQNF9gDGlOtqMHiqBedfCLhJ1wgQ=','2020-10-08 19:21:26.792373',0,'KinjalRef','KinjalRef','TrivediRef','chaudharykinjal_1987@yahoo.com',0,1,'2020-10-08 19:00:53.000000',4),(21,'pbkdf2_sha256$216000$6piXHrpCLS8t$JkEt3uP3uWl056GyVm4oipBdnHjXjk/+Yflek/lYgRw=','2021-01-08 11:44:26.387900',0,'adminone','Admin','One','adminone@gmail.com',0,1,'2021-01-04 11:52:54.827283',1),(22,'pbkdf2_sha256$180000$bCUac6s8Gmgo$HMhX7mTEDFFK5w54PGABC3Z/nz2ovZwSK5G2sjLiLmg=',NULL,0,'admintwo','Admin','Two','admintwo@gmail.com',0,1,'2021-01-04 11:53:55.461678',1),(23,'pbkdf2_sha256$216000$1HpXJPrRk98e$IWBpZ5anIUNZm85oi9lGfY/hKlZz7HgaO3lyuFj5dEQ=',NULL,1,'admin','','','admin@gmail.com',1,1,'2021-01-05 12:42:12.087122',NULL),(49,'pbkdf2_sha256$216000$gxV96yEtILfD$jp7lGkI0M4X7IN99mtpOvCr5tqYD3lFprzseAqCZ/k0=',NULL,0,'Client3','Client','three','client3@gmail.com',0,1,'2021-01-07 19:28:28.000000',4),(73,'pbkdf2_sha256$216000$YMIlONNthYC8$VHpNiWCbHJc5RFNN0ihtd54GXvbylR66wOY2o/X7Mvc=','2021-01-08 11:40:09.047626',1,'debbie.martin@manorpharmacygroup.co.uk',' Debbie',' Martin','debbie.martin@manorpharmacygroup.co.uk',1,1,'2021-01-08 11:37:45.000000',5),(77,'pbkdf2_sha256$216000$hFLCTu9F9fBw$pdZauh7SJOiUYp/mEuwn6M7OgPTyn57jiDhdvToKNgo=','2021-01-23 14:48:36.694613',0,'anujpalimkar@gmail.com','Anuj','Palimkar','anujpalimkar@gmail.com',1,1,'2021-01-15 14:20:25.000000',2),(78,'pbkdf2_sha256$216000$ly3Q3kDvyZRq$uY9moncNN26L8SnipVHemjpw85aED0OZ3ylLOHZb09Y=','2021-03-05 14:23:24.048367',0,'anujpalimkar14101993@gmail.com','Anuj','Palimkar','anujpalimkar14101993@gmail.com',1,1,'2021-01-15 14:32:19.000000',2),(79,'pbkdf2_sha256$216000$sZOCyNoYIets$o7rG7CbK9/3+sTn8U+3YRG82alVft7lhc8MsJjXnOUE=','2021-01-26 00:23:22.072762',0,'admintest@gmail.com',' admin',' test','admintest@gmail.com',1,1,'2021-01-26 00:22:44.000000',1);
+INSERT INTO `adminpanel_user` VALUES (1,'pbkdf2_sha256$216000$92hD1watI33i$fqJKvnojcmT/Stiq77Xy/tig233PZanWkirSZrGHEt8=','2021-03-11 12:56:54.976335',1,'superadmin','','','superadmin@gmail.com',1,1,'2020-08-27 14:54:25.630958',5),(3,'pbkdf2_sha256$180000$Ht8vYvRNBXBR$Lkd8HQ6LZbQLNRDIm+uZo31y0+uA4OXyLS97ibLz6L0=','2020-12-22 19:43:01.010249',0,'Kinjal777','Kinjal','Trivedi','kinju1220@gmail.com',0,1,'2020-08-27 16:12:28.000000',4),(8,'pbkdf2_sha256$180000$xMjIf3WB38lu$dCgF/2l0jhKTJsvReJUGeyae8g5erCb8HJx7+77XXhw=',NULL,0,'Sara','Sara','William','sara@gmail.com',0,1,'2020-09-29 15:40:49.000000',4),(9,'pbkdf2_sha256$216000$Z8jREFEbtCyl$c1Ldocy/DLwlWLf5eLK5x8jApwfSJ6m1kVwyGnSYLNE=','2021-03-05 14:21:24.204042',0,'Thomas','Thomas','Greco','tom@gmail.com',0,1,'2020-09-29 15:45:17.000000',4),(10,'pbkdf2_sha256$180000$tPgtt27hLm0M$hTPlga/pgxXZKvL9HBR0jhYxeJClBTlHW7KB7xJVt88=','2020-10-05 15:21:32.008256',0,'Jim','Jim','Carie','jim@gmail.com',0,1,'2020-10-01 18:20:58.000000',4),(20,'pbkdf2_sha256$180000$2eDXQrHJT8Ek$lOcD9QrbErfsKVIdQNF9gDGlOtqMHiqBedfCLhJ1wgQ=','2020-10-08 19:21:26.792373',0,'KinjalRef','KinjalRef','TrivediRef','chaudharykinjal_1987@yahoo.com',0,1,'2020-10-08 19:00:53.000000',4),(21,'pbkdf2_sha256$216000$6piXHrpCLS8t$JkEt3uP3uWl056GyVm4oipBdnHjXjk/+Yflek/lYgRw=','2021-01-08 11:44:26.387900',0,'adminone','Admin','One','adminone@gmail.com',0,1,'2021-01-04 11:52:54.827283',1),(22,'pbkdf2_sha256$180000$bCUac6s8Gmgo$HMhX7mTEDFFK5w54PGABC3Z/nz2ovZwSK5G2sjLiLmg=',NULL,0,'admintwo','Admin','Two','admintwo@gmail.com',0,1,'2021-01-04 11:53:55.461678',1),(23,'pbkdf2_sha256$216000$1HpXJPrRk98e$IWBpZ5anIUNZm85oi9lGfY/hKlZz7HgaO3lyuFj5dEQ=',NULL,1,'admin','','','admin@gmail.com',1,1,'2021-01-05 12:42:12.087122',NULL),(49,'pbkdf2_sha256$216000$gxV96yEtILfD$jp7lGkI0M4X7IN99mtpOvCr5tqYD3lFprzseAqCZ/k0=',NULL,0,'Client3','Client','three','client3@gmail.com',0,1,'2021-01-07 19:28:28.000000',4),(73,'pbkdf2_sha256$216000$YMIlONNthYC8$VHpNiWCbHJc5RFNN0ihtd54GXvbylR66wOY2o/X7Mvc=','2021-01-08 11:40:09.047626',1,'debbie.martin@manorpharmacygroup.co.uk',' Debbie',' Martin','debbie.martin@manorpharmacygroup.co.uk',1,1,'2021-01-08 11:37:45.000000',5),(77,'pbkdf2_sha256$216000$hFLCTu9F9fBw$pdZauh7SJOiUYp/mEuwn6M7OgPTyn57jiDhdvToKNgo=','2021-01-23 14:48:36.694613',0,'anujpalimkar@gmail.com','Anuj','Palimkar','anujpalimkar@gmail.com',1,1,'2021-01-15 14:20:25.000000',2),(78,'pbkdf2_sha256$216000$ly3Q3kDvyZRq$uY9moncNN26L8SnipVHemjpw85aED0OZ3ylLOHZb09Y=','2021-03-05 14:23:24.048367',0,'anujpalimkar14101993@gmail.com','Anuj','Palimkar','anujpalimkar14101993@gmail.com',1,1,'2021-01-15 14:32:19.000000',2),(79,'pbkdf2_sha256$216000$sZOCyNoYIets$o7rG7CbK9/3+sTn8U+3YRG82alVft7lhc8MsJjXnOUE=','2021-01-26 00:23:22.072762',0,'admintest@gmail.com',' admin',' test','admintest@gmail.com',1,1,'2021-01-26 00:22:44.000000',1);
 /*!40000 ALTER TABLE `adminpanel_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -953,7 +953,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -962,7 +962,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add content type',4,'add_contenttype'),(14,'Can change content type',4,'change_contenttype'),(15,'Can delete content type',4,'delete_contenttype'),(16,'Can view content type',4,'view_contenttype'),(17,'Can add session',5,'add_session'),(18,'Can change session',5,'change_session'),(19,'Can delete session',5,'delete_session'),(20,'Can view session',5,'view_session'),(21,'Can add user',6,'add_user'),(22,'Can change user',6,'change_user'),(23,'Can delete user',6,'delete_user'),(24,'Can view user',6,'view_user'),(25,'Can add customer',7,'add_customer'),(26,'Can change customer',7,'change_customer'),(27,'Can delete customer',7,'delete_customer'),(28,'Can view customer',7,'view_customer'),(29,'Can add discount type',8,'add_discounttype'),(30,'Can change discount type',8,'change_discounttype'),(31,'Can delete discount type',8,'delete_discounttype'),(32,'Can view discount type',8,'view_discounttype'),(33,'Can add installment type',9,'add_installmenttype'),(34,'Can change installment type',9,'change_installmenttype'),(35,'Can delete installment type',9,'delete_installmenttype'),(36,'Can view installment type',9,'view_installmenttype'),(37,'Can add order',10,'add_order'),(38,'Can change order',10,'change_order'),(39,'Can delete order',10,'delete_order'),(40,'Can view order',10,'view_order'),(41,'Can add product',11,'add_product'),(42,'Can change product',11,'change_product'),(43,'Can delete product',11,'delete_product'),(44,'Can view product',11,'view_product'),(45,'Can add user type',12,'add_usertype'),(46,'Can change user type',12,'change_usertype'),(47,'Can delete user type',12,'delete_usertype'),(48,'Can view user type',12,'view_usertype'),(49,'Can add payment',13,'add_payment'),(50,'Can change payment',13,'change_payment'),(51,'Can delete payment',13,'delete_payment'),(52,'Can view payment',13,'view_payment'),(53,'Can add order details',14,'add_orderdetails'),(54,'Can change order details',14,'change_orderdetails'),(55,'Can delete order details',14,'delete_orderdetails'),(56,'Can view order details',14,'view_orderdetails'),(57,'Can add installment due',15,'add_installmentdue'),(58,'Can change installment due',15,'change_installmentdue'),(59,'Can delete installment due',15,'delete_installmentdue'),(60,'Can view installment due',15,'view_installmentdue'),(61,'Can add address',16,'add_address'),(62,'Can change address',16,'change_address'),(63,'Can delete address',16,'delete_address'),(64,'Can view address',16,'view_address'),(65,'Can add invoice',17,'add_invoice'),(66,'Can change invoice',17,'change_invoice'),(67,'Can delete invoice',17,'delete_invoice'),(68,'Can view invoice',17,'view_invoice'),(69,'Can add merchant',18,'add_merchant'),(70,'Can change merchant',18,'change_merchant'),(71,'Can delete merchant',18,'delete_merchant'),(72,'Can view merchant',18,'view_merchant'),(73,'Can add site',19,'add_site'),(74,'Can change site',19,'change_site'),(75,'Can delete site',19,'delete_site'),(76,'Can view site',19,'view_site'),(77,'Can add activity log',20,'add_activitylog'),(78,'Can change activity log',20,'change_activitylog'),(79,'Can delete activity log',20,'delete_activitylog'),(80,'Can view activity log',20,'view_activitylog'),(81,'Can add activity type',21,'add_activitytype'),(82,'Can change activity type',21,'change_activitytype'),(83,'Can delete activity type',21,'delete_activitytype'),(84,'Can view activity type',21,'view_activitytype'),(85,'Can add category',22,'add_category'),(86,'Can change category',22,'change_category'),(87,'Can delete category',22,'delete_category'),(88,'Can view category',22,'view_category'),(89,'Can add order discount',23,'add_orderdiscount'),(90,'Can change order discount',23,'change_orderdiscount'),(91,'Can delete order discount',23,'delete_orderdiscount'),(92,'Can view order discount',23,'view_orderdiscount'),(93,'Can add customer discount eligibility',24,'add_customerdiscounteligibility'),(94,'Can change customer discount eligibility',24,'change_customerdiscounteligibility'),(95,'Can delete customer discount eligibility',24,'delete_customerdiscounteligibility'),(96,'Can view customer discount eligibility',24,'view_customerdiscounteligibility'),(97,'Can add configuration',25,'add_configuration'),(98,'Can change configuration',25,'change_configuration'),(99,'Can delete configuration',25,'delete_configuration'),(100,'Can view configuration',25,'view_configuration'),(101,'Can add announcement post',26,'add_announcementpost'),(102,'Can change announcement post',26,'change_announcementpost'),(103,'Can delete announcement post',26,'delete_announcementpost'),(104,'Can view announcement post',26,'view_announcementpost'),(105,'Can add order status',27,'add_orderstatus'),(106,'Can change order status',27,'change_orderstatus'),(107,'Can delete order status',27,'delete_orderstatus'),(108,'Can view order status',27,'view_orderstatus'),(109,'Can add product specification',28,'add_productspecification'),(110,'Can change product specification',28,'change_productspecification'),(111,'Can delete product specification',28,'delete_productspecification'),(112,'Can view product specification',28,'view_productspecification');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add content type',4,'add_contenttype'),(14,'Can change content type',4,'change_contenttype'),(15,'Can delete content type',4,'delete_contenttype'),(16,'Can view content type',4,'view_contenttype'),(17,'Can add session',5,'add_session'),(18,'Can change session',5,'change_session'),(19,'Can delete session',5,'delete_session'),(20,'Can view session',5,'view_session'),(21,'Can add user',6,'add_user'),(22,'Can change user',6,'change_user'),(23,'Can delete user',6,'delete_user'),(24,'Can view user',6,'view_user'),(25,'Can add customer',7,'add_customer'),(26,'Can change customer',7,'change_customer'),(27,'Can delete customer',7,'delete_customer'),(28,'Can view customer',7,'view_customer'),(29,'Can add discount type',8,'add_discounttype'),(30,'Can change discount type',8,'change_discounttype'),(31,'Can delete discount type',8,'delete_discounttype'),(32,'Can view discount type',8,'view_discounttype'),(33,'Can add installment type',9,'add_installmenttype'),(34,'Can change installment type',9,'change_installmenttype'),(35,'Can delete installment type',9,'delete_installmenttype'),(36,'Can view installment type',9,'view_installmenttype'),(37,'Can add order',10,'add_order'),(38,'Can change order',10,'change_order'),(39,'Can delete order',10,'delete_order'),(40,'Can view order',10,'view_order'),(41,'Can add product',11,'add_product'),(42,'Can change product',11,'change_product'),(43,'Can delete product',11,'delete_product'),(44,'Can view product',11,'view_product'),(45,'Can add user type',12,'add_usertype'),(46,'Can change user type',12,'change_usertype'),(47,'Can delete user type',12,'delete_usertype'),(48,'Can view user type',12,'view_usertype'),(49,'Can add payment',13,'add_payment'),(50,'Can change payment',13,'change_payment'),(51,'Can delete payment',13,'delete_payment'),(52,'Can view payment',13,'view_payment'),(53,'Can add order details',14,'add_orderdetails'),(54,'Can change order details',14,'change_orderdetails'),(55,'Can delete order details',14,'delete_orderdetails'),(56,'Can view order details',14,'view_orderdetails'),(57,'Can add installment due',15,'add_installmentdue'),(58,'Can change installment due',15,'change_installmentdue'),(59,'Can delete installment due',15,'delete_installmentdue'),(60,'Can view installment due',15,'view_installmentdue'),(61,'Can add address',16,'add_address'),(62,'Can change address',16,'change_address'),(63,'Can delete address',16,'delete_address'),(64,'Can view address',16,'view_address'),(65,'Can add invoice',17,'add_invoice'),(66,'Can change invoice',17,'change_invoice'),(67,'Can delete invoice',17,'delete_invoice'),(68,'Can view invoice',17,'view_invoice'),(69,'Can add merchant',18,'add_merchant'),(70,'Can change merchant',18,'change_merchant'),(71,'Can delete merchant',18,'delete_merchant'),(72,'Can view merchant',18,'view_merchant'),(73,'Can add site',19,'add_site'),(74,'Can change site',19,'change_site'),(75,'Can delete site',19,'delete_site'),(76,'Can view site',19,'view_site'),(77,'Can add activity log',20,'add_activitylog'),(78,'Can change activity log',20,'change_activitylog'),(79,'Can delete activity log',20,'delete_activitylog'),(80,'Can view activity log',20,'view_activitylog'),(81,'Can add activity type',21,'add_activitytype'),(82,'Can change activity type',21,'change_activitytype'),(83,'Can delete activity type',21,'delete_activitytype'),(84,'Can view activity type',21,'view_activitytype'),(85,'Can add category',22,'add_category'),(86,'Can change category',22,'change_category'),(87,'Can delete category',22,'delete_category'),(88,'Can view category',22,'view_category'),(89,'Can add order discount',23,'add_orderdiscount'),(90,'Can change order discount',23,'change_orderdiscount'),(91,'Can delete order discount',23,'delete_orderdiscount'),(92,'Can view order discount',23,'view_orderdiscount'),(93,'Can add customer discount eligibility',24,'add_customerdiscounteligibility'),(94,'Can change customer discount eligibility',24,'change_customerdiscounteligibility'),(95,'Can delete customer discount eligibility',24,'delete_customerdiscounteligibility'),(96,'Can view customer discount eligibility',24,'view_customerdiscounteligibility'),(97,'Can add configuration',25,'add_configuration'),(98,'Can change configuration',25,'change_configuration'),(99,'Can delete configuration',25,'delete_configuration'),(100,'Can view configuration',25,'view_configuration'),(101,'Can add announcement post',26,'add_announcementpost'),(102,'Can change announcement post',26,'change_announcementpost'),(103,'Can delete announcement post',26,'delete_announcementpost'),(104,'Can view announcement post',26,'view_announcementpost'),(105,'Can add order status',27,'add_orderstatus'),(106,'Can change order status',27,'change_orderstatus'),(107,'Can delete order status',27,'delete_orderstatus'),(108,'Can view order status',27,'view_orderstatus'),(109,'Can add product specification',28,'add_productspecification'),(110,'Can change product specification',28,'change_productspecification'),(111,'Can delete product specification',28,'delete_productspecification'),(112,'Can view product specification',28,'view_productspecification'),(113,'Can add log',29,'add_log'),(114,'Can change log',29,'change_log'),(115,'Can delete log',29,'delete_log'),(116,'Can view log',29,'view_log');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1049,7 +1049,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1058,7 +1058,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(20,'adminpanel','activitylog'),(21,'adminpanel','activitytype'),(16,'adminpanel','address'),(26,'adminpanel','announcementpost'),(22,'adminpanel','category'),(25,'adminpanel','configuration'),(7,'adminpanel','customer'),(24,'adminpanel','customerdiscounteligibility'),(8,'adminpanel','discounttype'),(15,'adminpanel','installmentdue'),(9,'adminpanel','installmenttype'),(17,'adminpanel','invoice'),(10,'adminpanel','order'),(14,'adminpanel','orderdetails'),(23,'adminpanel','orderdiscount'),(27,'adminpanel','orderstatus'),(13,'adminpanel','payment'),(11,'adminpanel','product'),(28,'adminpanel','productspecification'),(6,'adminpanel','user'),(12,'adminpanel','usertype'),(3,'auth','group'),(2,'auth','permission'),(4,'contenttypes','contenttype'),(18,'gateway','merchant'),(5,'sessions','session'),(19,'sites','site');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(20,'adminpanel','activitylog'),(21,'adminpanel','activitytype'),(16,'adminpanel','address'),(26,'adminpanel','announcementpost'),(22,'adminpanel','category'),(25,'adminpanel','configuration'),(7,'adminpanel','customer'),(24,'adminpanel','customerdiscounteligibility'),(8,'adminpanel','discounttype'),(15,'adminpanel','installmentdue'),(9,'adminpanel','installmenttype'),(17,'adminpanel','invoice'),(10,'adminpanel','order'),(14,'adminpanel','orderdetails'),(23,'adminpanel','orderdiscount'),(27,'adminpanel','orderstatus'),(13,'adminpanel','payment'),(11,'adminpanel','product'),(28,'adminpanel','productspecification'),(6,'adminpanel','user'),(12,'adminpanel','usertype'),(3,'auth','group'),(2,'auth','permission'),(4,'contenttypes','contenttype'),(29,'eventlog','log'),(18,'gateway','merchant'),(5,'sessions','session'),(19,'sites','site');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1075,7 +1075,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1084,7 +1084,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2020-08-27 14:52:33.885458'),(2,'contenttypes','0002_remove_content_type_name','2020-08-27 14:52:35.426458'),(3,'auth','0001_initial','2020-08-27 14:52:36.529458'),(4,'auth','0002_alter_permission_name_max_length','2020-08-27 14:52:46.636458'),(5,'auth','0003_alter_user_email_max_length','2020-08-27 14:52:47.025458'),(6,'auth','0004_alter_user_username_opts','2020-08-27 14:52:47.324458'),(7,'auth','0005_alter_user_last_login_null','2020-08-27 14:52:47.533458'),(8,'auth','0006_require_contenttypes_0002','2020-08-27 14:52:47.685458'),(9,'auth','0007_alter_validators_add_error_messages','2020-08-27 14:52:48.082458'),(10,'auth','0008_alter_user_username_max_length','2020-08-27 14:52:48.206458'),(11,'auth','0009_alter_user_last_name_max_length','2020-08-27 14:52:48.396458'),(12,'auth','0010_alter_group_name_max_length','2020-08-27 14:52:49.097458'),(13,'auth','0011_update_proxy_permissions','2020-08-27 14:52:49.172458'),(14,'adminpanel','0001_initial','2020-08-27 14:53:02.187458'),(15,'ManorPharmacy','0001_initial','2020-08-27 14:53:55.288458'),(16,'ManorPharmacy','0002_auto_20200720_1247','2020-08-27 14:54:09.293958'),(17,'admin','0001_initial','2020-08-27 14:54:11.590958'),(18,'admin','0002_logentry_remove_auto_add','2020-08-27 14:54:23.053958'),(19,'admin','0003_logentry_add_action_flag_choices','2020-08-27 14:54:23.229958'),(20,'sessions','0001_initial','2020-08-27 14:54:24.126958'),(21,'adminpanel','0002_auto_20200907_0956','2020-09-07 09:56:48.401830'),(22,'adminpanel','0003_auto_20200908_0956','2020-09-08 09:56:43.838635'),(23,'adminpanel','0004_product_noofinstallmentmonths','2020-09-08 14:56:43.168598'),(24,'adminpanel','0005_auto_20200916_1443','2020-09-16 14:44:29.369830'),(25,'adminpanel','0006_auto_20200916_1732','2020-09-16 17:33:04.572917'),(26,'adminpanel','0007_auto_20200917_1736','2020-09-17 17:37:23.923837'),(27,'adminpanel','0008_auto_20200923_1056','2020-09-23 10:56:24.867573'),(28,'gateway','0001_initial','2020-09-23 10:56:27.953573'),(29,'gateway','0002_auto_20190624_1357','2020-09-23 10:56:30.423573'),(30,'gateway','0003_auto_20190710_1208','2020-09-23 10:56:31.891073'),(31,'gateway','0004_auto_20190715_1401','2020-09-23 10:56:32.583573'),(32,'gateway','0005_auto_20190719_1615','2020-09-23 10:56:32.831073'),(33,'gateway','0006_auto_20190802_1453','2020-09-23 10:56:34.562073'),(34,'gateway','0007_auto_20190819_1258','2020-09-23 10:56:35.264573'),(35,'adminpanel','0009_auto_20200928_1640','2020-09-28 16:40:38.794082'),(36,'adminpanel','0010_auto_20200930_1439','2020-09-30 14:39:09.523692'),(37,'adminpanel','0011_product_discountpercentage','2020-10-01 11:43:10.533357'),(38,'adminpanel','0012_auto_20201001_1150','2020-10-01 11:50:29.196357'),(39,'adminpanel','0013_customer_referraldiscount','2020-10-01 15:30:18.859372'),(40,'adminpanel','0014_customer_personaldiscount','2020-10-01 18:35:49.734519'),(41,'adminpanel','0015_auto_20201002_1701','2020-10-02 17:01:40.620375'),(42,'sites','0001_initial','2020-10-05 10:24:30.648459'),(43,'sites','0002_alter_domain_unique','2020-10-05 10:24:32.558650'),(44,'adminpanel','0016_product_additionalmemberprice','2020-10-06 12:03:00.866328'),(45,'adminpanel','0017_auto_20201006_1547','2020-10-06 15:47:35.526828'),(46,'adminpanel','0018_activitylog_activitytype','2020-10-12 16:19:54.475213'),(47,'adminpanel','0019_product_slug','2020-10-14 16:46:35.085208'),(48,'adminpanel','0020_auto_20201014_1707','2020-10-14 17:07:44.329208'),(49,'adminpanel','0021_auto_20201015_1048','2020-10-15 10:49:32.874902'),(50,'adminpanel','0022_product_detaildescription','2020-10-15 11:23:57.266722'),(51,'adminpanel','0023_auto_20201020_1216','2020-10-20 12:17:18.225501'),(52,'adminpanel','0024_auto_20201022_1030','2020-10-22 10:31:13.986875'),(53,'adminpanel','0025_auto_20201022_1630','2020-10-22 16:30:29.556309'),(54,'adminpanel','0026_auto_20201023_1254','2020-10-23 12:55:14.314970'),(55,'adminpanel','0027_announcementpost','2020-10-23 13:25:04.822501'),(56,'adminpanel','0028_auto_20201029_1655','2020-10-29 16:56:12.777860'),(57,'adminpanel','0029_auto_20201029_1657','2020-10-29 16:57:51.686749'),(58,'adminpanel','0030_order_actualamounttopay','2020-10-29 18:05:31.056646'),(59,'adminpanel','0031_order_fullpaymentdiscountamount','2020-10-29 18:27:27.476275'),(60,'adminpanel','0032_auto_20201029_1910','2020-10-29 19:11:04.045905'),(61,'adminpanel','0033_auto_20201029_1918','2020-10-29 19:18:47.340230'),(62,'adminpanel','0034_auto_20201029_1933','2020-10-29 19:33:38.864374'),(63,'adminpanel','0035_configuration_displayname','2020-11-16 17:45:58.544534'),(64,'adminpanel','0036_configuration_image','2020-11-17 16:43:54.636506'),(65,'adminpanel','0037_announcementpost_isactive','2020-11-18 10:18:30.010821'),(66,'adminpanel','0038_auto_20201120_0949','2020-11-20 09:49:44.441233'),(67,'adminpanel','0039_auto_20201120_1442','2020-11-20 14:42:58.791198'),(68,'adminpanel','0040_auto_20201202_1842','2020-12-02 18:44:37.536125'),(69,'adminpanel','0041_installmentdue_isinstalmentpaid','2020-12-10 11:48:48.137962'),(70,'adminpanel','0042_payment_stripe_payment_id','2020-12-10 15:55:16.562962'),(71,'adminpanel','0043_payment_orderdetail','2020-12-10 18:37:17.272493'),(72,'adminpanel','0044_auto_20201210_1844','2020-12-10 18:44:32.424106'),(73,'adminpanel','0041_auto_20201228_1235','2021-01-05 12:42:11.900897'),(74,'adminpanel','0045_merge_20210105_1241','2021-01-05 12:42:11.921847'),(75,'auth','0012_alter_user_first_name_max_length','2021-01-05 12:42:11.939887'),(76,'adminpanel','0046_auto_20210121_1231','2021-01-21 12:32:04.021389');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2020-08-27 14:52:33.885458'),(2,'contenttypes','0002_remove_content_type_name','2020-08-27 14:52:35.426458'),(3,'auth','0001_initial','2020-08-27 14:52:36.529458'),(4,'auth','0002_alter_permission_name_max_length','2020-08-27 14:52:46.636458'),(5,'auth','0003_alter_user_email_max_length','2020-08-27 14:52:47.025458'),(6,'auth','0004_alter_user_username_opts','2020-08-27 14:52:47.324458'),(7,'auth','0005_alter_user_last_login_null','2020-08-27 14:52:47.533458'),(8,'auth','0006_require_contenttypes_0002','2020-08-27 14:52:47.685458'),(9,'auth','0007_alter_validators_add_error_messages','2020-08-27 14:52:48.082458'),(10,'auth','0008_alter_user_username_max_length','2020-08-27 14:52:48.206458'),(11,'auth','0009_alter_user_last_name_max_length','2020-08-27 14:52:48.396458'),(12,'auth','0010_alter_group_name_max_length','2020-08-27 14:52:49.097458'),(13,'auth','0011_update_proxy_permissions','2020-08-27 14:52:49.172458'),(14,'adminpanel','0001_initial','2020-08-27 14:53:02.187458'),(15,'ManorPharmacy','0001_initial','2020-08-27 14:53:55.288458'),(16,'ManorPharmacy','0002_auto_20200720_1247','2020-08-27 14:54:09.293958'),(17,'admin','0001_initial','2020-08-27 14:54:11.590958'),(18,'admin','0002_logentry_remove_auto_add','2020-08-27 14:54:23.053958'),(19,'admin','0003_logentry_add_action_flag_choices','2020-08-27 14:54:23.229958'),(20,'sessions','0001_initial','2020-08-27 14:54:24.126958'),(21,'adminpanel','0002_auto_20200907_0956','2020-09-07 09:56:48.401830'),(22,'adminpanel','0003_auto_20200908_0956','2020-09-08 09:56:43.838635'),(23,'adminpanel','0004_product_noofinstallmentmonths','2020-09-08 14:56:43.168598'),(24,'adminpanel','0005_auto_20200916_1443','2020-09-16 14:44:29.369830'),(25,'adminpanel','0006_auto_20200916_1732','2020-09-16 17:33:04.572917'),(26,'adminpanel','0007_auto_20200917_1736','2020-09-17 17:37:23.923837'),(27,'adminpanel','0008_auto_20200923_1056','2020-09-23 10:56:24.867573'),(28,'gateway','0001_initial','2020-09-23 10:56:27.953573'),(29,'gateway','0002_auto_20190624_1357','2020-09-23 10:56:30.423573'),(30,'gateway','0003_auto_20190710_1208','2020-09-23 10:56:31.891073'),(31,'gateway','0004_auto_20190715_1401','2020-09-23 10:56:32.583573'),(32,'gateway','0005_auto_20190719_1615','2020-09-23 10:56:32.831073'),(33,'gateway','0006_auto_20190802_1453','2020-09-23 10:56:34.562073'),(34,'gateway','0007_auto_20190819_1258','2020-09-23 10:56:35.264573'),(35,'adminpanel','0009_auto_20200928_1640','2020-09-28 16:40:38.794082'),(36,'adminpanel','0010_auto_20200930_1439','2020-09-30 14:39:09.523692'),(37,'adminpanel','0011_product_discountpercentage','2020-10-01 11:43:10.533357'),(38,'adminpanel','0012_auto_20201001_1150','2020-10-01 11:50:29.196357'),(39,'adminpanel','0013_customer_referraldiscount','2020-10-01 15:30:18.859372'),(40,'adminpanel','0014_customer_personaldiscount','2020-10-01 18:35:49.734519'),(41,'adminpanel','0015_auto_20201002_1701','2020-10-02 17:01:40.620375'),(42,'sites','0001_initial','2020-10-05 10:24:30.648459'),(43,'sites','0002_alter_domain_unique','2020-10-05 10:24:32.558650'),(44,'adminpanel','0016_product_additionalmemberprice','2020-10-06 12:03:00.866328'),(45,'adminpanel','0017_auto_20201006_1547','2020-10-06 15:47:35.526828'),(46,'adminpanel','0018_activitylog_activitytype','2020-10-12 16:19:54.475213'),(47,'adminpanel','0019_product_slug','2020-10-14 16:46:35.085208'),(48,'adminpanel','0020_auto_20201014_1707','2020-10-14 17:07:44.329208'),(49,'adminpanel','0021_auto_20201015_1048','2020-10-15 10:49:32.874902'),(50,'adminpanel','0022_product_detaildescription','2020-10-15 11:23:57.266722'),(51,'adminpanel','0023_auto_20201020_1216','2020-10-20 12:17:18.225501'),(52,'adminpanel','0024_auto_20201022_1030','2020-10-22 10:31:13.986875'),(53,'adminpanel','0025_auto_20201022_1630','2020-10-22 16:30:29.556309'),(54,'adminpanel','0026_auto_20201023_1254','2020-10-23 12:55:14.314970'),(55,'adminpanel','0027_announcementpost','2020-10-23 13:25:04.822501'),(56,'adminpanel','0028_auto_20201029_1655','2020-10-29 16:56:12.777860'),(57,'adminpanel','0029_auto_20201029_1657','2020-10-29 16:57:51.686749'),(58,'adminpanel','0030_order_actualamounttopay','2020-10-29 18:05:31.056646'),(59,'adminpanel','0031_order_fullpaymentdiscountamount','2020-10-29 18:27:27.476275'),(60,'adminpanel','0032_auto_20201029_1910','2020-10-29 19:11:04.045905'),(61,'adminpanel','0033_auto_20201029_1918','2020-10-29 19:18:47.340230'),(62,'adminpanel','0034_auto_20201029_1933','2020-10-29 19:33:38.864374'),(63,'adminpanel','0035_configuration_displayname','2020-11-16 17:45:58.544534'),(64,'adminpanel','0036_configuration_image','2020-11-17 16:43:54.636506'),(65,'adminpanel','0037_announcementpost_isactive','2020-11-18 10:18:30.010821'),(66,'adminpanel','0038_auto_20201120_0949','2020-11-20 09:49:44.441233'),(67,'adminpanel','0039_auto_20201120_1442','2020-11-20 14:42:58.791198'),(68,'adminpanel','0040_auto_20201202_1842','2020-12-02 18:44:37.536125'),(69,'adminpanel','0041_installmentdue_isinstalmentpaid','2020-12-10 11:48:48.137962'),(70,'adminpanel','0042_payment_stripe_payment_id','2020-12-10 15:55:16.562962'),(71,'adminpanel','0043_payment_orderdetail','2020-12-10 18:37:17.272493'),(72,'adminpanel','0044_auto_20201210_1844','2020-12-10 18:44:32.424106'),(73,'adminpanel','0041_auto_20201228_1235','2021-01-05 12:42:11.900897'),(74,'adminpanel','0045_merge_20210105_1241','2021-01-05 12:42:11.921847'),(75,'auth','0012_alter_user_first_name_max_length','2021-01-05 12:42:11.939887'),(76,'adminpanel','0046_auto_20210121_1231','2021-01-21 12:32:04.021389'),(77,'eventlog','0001_initial','2021-03-11 13:00:49.205107'),(78,'eventlog','0002_auto_20150113_1450','2021-03-11 13:00:51.437562');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1110,7 +1110,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('33m35ujg48b5rj4xathhhliigo5ixlvx','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-27 13:55:03.016594'),('3v538c5urum114q6e5euehx32ey3bt20','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-10 16:56:43.242345'),('4ru5t5cl71jbcbjgcazc911vql2nnw2b','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2021-01-18 11:51:16.985283'),('5ueybb6wr0ln84wgp9cpexrtbojm8o6g','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-12-28 19:03:32.864741'),('6ue134c45khzeau4ejc0whizi0mtklw6','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:11:57.544566'),('c80ibb7joybhzo611yw7hq4iuqf7ny59','.eJxVjMsKQiEUAP_FdYSKz7b1C3ctRz3ipa6Gj1X0790gopYzA_MgDubIbnZsbo3kRCw5_DoP4YrlHSBua7lDwdvxPPuo27L3C4baYNT2cV_-v2ToeV8kKqwXBrlPFj0zSjPmUwIpuDRScyUABUaaVGSKe0211CygRmHRmoDk-QJ9KDqi:1l5AKw:UWxzrwndWNzxt6sgrcqKT_1ugZli6Czn7MqahHlr2K4','2021-02-11 16:40:02.329116'),('evvr4qofrj8ug6qq3fdh0zpnqnjidu8u','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:14:48.715681'),('iw29ablq0fqa0bomscq0n7x5kz64y5yh','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-09-22 10:36:25.337835'),('jjorvwst44x42ya6fno288x3vbc5gywa','.eJxVjMsKwjAQAP8lZ5GkeW286i94LtvshhZtWpLmJP67FUT0ODMwD9Fj28a-VS79ROIkPIjDrxww3ji_C9I85RUz34_nVrdlvu79wnEpuC3l4778fxmxjvuCUjDGGhWMJiDnHHSDh9TF5BkiIQVWMVhIRrKW0EmbHGiNxjIrp614vgCbLzpS:1l0QAu:tyWvAD3f2U9S6GlwAvdokeAz9i4RuDetVCe7DRIlF7w','2021-01-29 14:34:04.015101'),('olw00s199d3lr3faqu102sprjf2ozsdi','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-12-25 11:56:39.408282'),('q7kwdwprqiyomx0z25t76s6pslbgov47','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-15 19:43:08.671738'),('ryqo1cchem7k5qu6s6k33hx7rubmfmck','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-09-24 10:19:01.091836'),('s0yx9ebplq336nocsmbsd42xah6q5iwe','MDI5ZTBkZDY1MTRjM2IzM2VmOTNlNWM3MWNjMjg3NGFkYmQxYmM2Mzp7Il9hdXRoX3VzZXJfaWQiOiI5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImI5N2RmNmU4YzIzYTUxMWNhMWNkNmNlZDRmNWQzMjI1ZDgzYjRjY2EifQ==','2020-10-13 15:56:59.698156'),('s5vlmemadty4jrellc9qoi10wutkgl2f','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:31:39.082708'),('xm8snd2898ew1chwiyl9bc9f6y7jdxn1','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-23 18:54:02.568233'),('zbwgkdgvi95u7hxdtmcq1omopzvmtzgq','.eJxVjMsKwjAQAP8lZ5GkeW286i94LtvshhZtWpLmJP67FUT0ODMwD9Fj28a-VS79ROIkPIjDrxww3ji_C9I85RUz34_nVrdlvu79wnEpuC3l4778fxmxjvuCUjDGGhWMJiDnHHSDh9TF5BkiIQVWMVhIRrKW0EmbHGiNxjIrp614vgCbLzpS:1lIBMS:muc5XLJclO6LfAqO-3gdVCaMBAJgjGkr-q4sBmw6mlg','2021-03-19 14:23:24.185121');
+INSERT INTO `django_session` VALUES ('33m35ujg48b5rj4xathhhliigo5ixlvx','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-27 13:55:03.016594'),('3v538c5urum114q6e5euehx32ey3bt20','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-10 16:56:43.242345'),('4er9lryra8x07j4aleoz1qdz0un0zt8i','.eJxVjEEOwiAQAP_C2RigLIJX_YJnsmyX0GipAXoy_t2aGKPHmUnmIQKuPYe1cQ3TKI5Cid2vi0hXLu-A4zyVOxa-7U9r68t82fqZaanYl_pxX_6_ZGx5WyQDaCl6AjWkA7IhAKMVK3DaKMnaSpCRB3LJO5LA0lpCq8Eb9tGSeL4AbFQ6Hg:1lKKs3:44oZ14OdSMtgxcmwzlScCapKNzRju9J4Vm7nL_Ld0BU','2021-03-25 12:56:55.070332'),('4ru5t5cl71jbcbjgcazc911vql2nnw2b','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2021-01-18 11:51:16.985283'),('5ueybb6wr0ln84wgp9cpexrtbojm8o6g','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-12-28 19:03:32.864741'),('6ue134c45khzeau4ejc0whizi0mtklw6','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:11:57.544566'),('c80ibb7joybhzo611yw7hq4iuqf7ny59','.eJxVjMsKQiEUAP_FdYSKz7b1C3ctRz3ipa6Gj1X0790gopYzA_MgDubIbnZsbo3kRCw5_DoP4YrlHSBua7lDwdvxPPuo27L3C4baYNT2cV_-v2ToeV8kKqwXBrlPFj0zSjPmUwIpuDRScyUABUaaVGSKe0211CygRmHRmoDk-QJ9KDqi:1l5AKw:UWxzrwndWNzxt6sgrcqKT_1ugZli6Czn7MqahHlr2K4','2021-02-11 16:40:02.329116'),('evvr4qofrj8ug6qq3fdh0zpnqnjidu8u','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:14:48.715681'),('iw29ablq0fqa0bomscq0n7x5kz64y5yh','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-09-22 10:36:25.337835'),('jjorvwst44x42ya6fno288x3vbc5gywa','.eJxVjMsKwjAQAP8lZ5GkeW286i94LtvshhZtWpLmJP67FUT0ODMwD9Fj28a-VS79ROIkPIjDrxww3ji_C9I85RUz34_nVrdlvu79wnEpuC3l4778fxmxjvuCUjDGGhWMJiDnHHSDh9TF5BkiIQVWMVhIRrKW0EmbHGiNxjIrp614vgCbLzpS:1l0QAu:tyWvAD3f2U9S6GlwAvdokeAz9i4RuDetVCe7DRIlF7w','2021-01-29 14:34:04.015101'),('olw00s199d3lr3faqu102sprjf2ozsdi','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-12-25 11:56:39.408282'),('q7kwdwprqiyomx0z25t76s6pslbgov47','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-15 19:43:08.671738'),('ryqo1cchem7k5qu6s6k33hx7rubmfmck','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-09-24 10:19:01.091836'),('s0yx9ebplq336nocsmbsd42xah6q5iwe','MDI5ZTBkZDY1MTRjM2IzM2VmOTNlNWM3MWNjMjg3NGFkYmQxYmM2Mzp7Il9hdXRoX3VzZXJfaWQiOiI5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImI5N2RmNmU4YzIzYTUxMWNhMWNkNmNlZDRmNWQzMjI1ZDgzYjRjY2EifQ==','2020-10-13 15:56:59.698156'),('s5vlmemadty4jrellc9qoi10wutkgl2f','MTJhM2UwMjllNGRmMjE3ODZmYTU5NmMyNmMyNTQ2YzkyMDczMDdjYzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6ImZhMDAzMzllOWM4OTExNDZmNjM1OTgzZTAyYzVlNWI1YTc0MjQ3N2EifQ==','2020-12-04 09:31:39.082708'),('xm8snd2898ew1chwiyl9bc9f6y7jdxn1','MWNkODc1ZDVhZmJkZjMwYmIyMTdlNzQ1MmQ3NGYxNDhhMmRjZjNhYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWRtaW5wYW5lbC5DdXN0b21Vc2VyRGVjb3JhdG9yLkN1c3RvbURlY29yYXRvciIsIl9hdXRoX3VzZXJfaGFzaCI6IjA3YzE3MDVjMWI5YjljMGU3ODAxZjA2MjViY2JkNmRkYWYwYzU3YzIifQ==','2020-10-23 18:54:02.568233'),('zbwgkdgvi95u7hxdtmcq1omopzvmtzgq','.eJxVjMsKwjAQAP8lZ5GkeW286i94LtvshhZtWpLmJP67FUT0ODMwD9Fj28a-VS79ROIkPIjDrxww3ji_C9I85RUz34_nVrdlvu79wnEpuC3l4778fxmxjvuCUjDGGhWMJiDnHHSDh9TF5BkiIQVWMVhIRrKW0EmbHGiNxjIrp614vgCbLzpS:1lIBMS:muc5XLJclO6LfAqO-3gdVCaMBAJgjGkr-q4sBmw6mlg','2021-03-19 14:23:24.185121');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1138,6 +1138,41 @@ LOCK TABLES `django_site` WRITE;
 /*!40000 ALTER TABLE `django_site` DISABLE KEYS */;
 INSERT INTO `django_site` VALUES (1,'http://127.0.0.1:8000/','http://127.0.0.1:8000/');
 /*!40000 ALTER TABLE `django_site` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `eventlog_log`
+--
+
+DROP TABLE IF EXISTS `eventlog_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `eventlog_log` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `timestamp` datetime(6) NOT NULL,
+  `action` varchar(50) NOT NULL,
+  `extra` longtext NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `content_type_id` int DEFAULT NULL,
+  `object_id` int unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `eventlog_log_user_id_a3f98596_fk_adminpanel_user_id` (`user_id`),
+  KEY `eventlog_log_timestamp_a2d88eb2` (`timestamp`),
+  KEY `eventlog_log_action_cb30ff93` (`action`),
+  KEY `eventlog_log_content_type_id_e36144c9_fk_django_content_type_id` (`content_type_id`),
+  CONSTRAINT `eventlog_log_content_type_id_e36144c9_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
+  CONSTRAINT `eventlog_log_user_id_a3f98596_fk_adminpanel_user_id` FOREIGN KEY (`user_id`) REFERENCES `adminpanel_user` (`id`),
+  CONSTRAINT `eventlog_log_chk_1` CHECK ((`object_id` >= 0))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eventlog_log`
+--
+
+LOCK TABLES `eventlog_log` WRITE;
+/*!40000 ALTER TABLE `eventlog_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eventlog_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1229,11 +1264,11 @@ INSERT INTO `slotdescription` VALUES (1,'09:00:00','09:30:00'),(2,'09:30:00','10
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'prolongevity'
+-- Dumping events for database 'prolongevity_test'
 --
 
 --
--- Dumping routines for database 'prolongevity'
+-- Dumping routines for database 'prolongevity_test'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `addRecommendation` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -1607,6 +1642,29 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetActivityLogList` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetActivityLogList`()
+BEGIN
+	SELECT AC.ActivityType_id, AC.ActivityDescription, A.ActivityType, U.Username, AC.LogCreatedDate
+		FROM adminpanel_activitylog AC 
+        LEFT JOIN adminpanel_activitytype A ON AC.ActivityType_id = A.ActivityTypeId
+        LEFT JOIN prolongevity.adminpanel_user U ON AC.User_id = U.id
+        ORDER BY AC.ActivityLogId DESC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `GetAdminList` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1642,6 +1700,25 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAnnouncementList`()
 BEGIN
 	SELECT * FROM adminpanel_announcementpost;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetAnnouncementPostById` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAnnouncementPostById`(IN id int)
+BEGIN
+	SELECT * FROM adminpanel_announcementpost WHERE Announcement_Id = id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1759,6 +1836,39 @@ BEGIN
 		IFNULL(C.Phone_No,'') AS Phone_No, IFNULL(C.Gender,'') AS Gender
 		FROM adminpanel_consultant C LEFT JOIN adminpanel_user U ON U.Id = C.user_id
         WHERE (U.user_type_id = 3);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetCurrentPlacedAndProcessedOrders` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetCurrentPlacedAndProcessedOrders`()
+BEGIN
+	SELECT O.Order_Id, O.Order_Date, O.OrderCompletionDate, 
+		CONCAT(C.First_Name, ' ' ,C.Last_Name) as CustName, O.OrderStatus_id AS OrderId,
+        OS.OrderStatusType, 
+        (SELECT GROUP_CONCAT(' ',P.Name) FROM adminpanel_orderdetails OD 
+			LEFT JOIN adminpanel_product P ON OD.Product_Id = P.Product_Id
+			WHERE O.Order_Id = OD.Order_Id
+		) AS Items,
+        A.Postal_Code
+        		
+        FROM prolongevity.adminpanel_order O
+			LEFT JOIN adminpanel_Customer C ON O.Customer_id = C.Customer_Id
+            LEFT JOIN adminpanel_OrderStatus OS ON O.OrderStatus_id = OS.OrderStatusId
+            LEFT JOIN adminpanel_address A ON C.user_id = A.User_Id AND A.Address_Type = 'B'
+		WHERE O.IsOrderCompleted = 1 AND (O.OrderStatus_id = 1 OR O.OrderStatus_id = 2)
+			ORDER BY O.OrderCompletionDate DESC, O.Order_Id DESC;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2036,6 +2146,155 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetOrderDetailsReportByClientResult` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetOrderDetailsReportByClientResult`(IN clientName VARCHAR(100))
+BEGIN
+	SELECT  CONCAT(C.First_Name, ' ' ,C.Last_Name) as CustName, 
+		O.OrderCompletionDate AS "PurchaseDate",
+        IFNULL(O.ActualAmountToPay,0) AS "ActualAmountToPay", 
+        (SELECT  SUM(P.Amount) FROM prolongevity.adminpanel_payment P  where O.Order_Id = P.Order_Id) as AmountPaid,
+		IFNULL(O.FullPaymentDiscountAmount,0) AS "FullPaymentDiscountAmount",
+        CASE WHEN IFNULL(O.FullPaymentDiscountAmount,0) = 0 THEN 'Instalment' 
+        ELSE 'Full Payment' END AS PaymentMethod,
+		IFNULL(O.ServiceTotalAmount,0) AS "ServiceTotalAmount", O.Order_Id
+    
+	FROM prolongevity.adminpanel_customer C
+		LEFT JOIN prolongevity.adminpanel_order O ON C.Customer_Id = O.Customer_Id
+	WHERE O.IsOrderCompleted = 1 AND O.ActualAmountToPay > 0
+		AND (C.First_Name LIKE CONCAT('%', clientName , '%') OR C.Last_Name LIKE CONCAT('%', clientName , '%'));
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetOrderDetailsReportByProductResult` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetOrderDetailsReportByProductResult`(IN id int)
+BEGIN
+
+	SELECT  CONCAT(C.First_Name, ' ' ,C.Last_Name) as CustName, 
+		O.OrderCompletionDate AS "PurchaseDate",  PR.Name,
+        IFNULL(O.ActualAmountToPay,0) AS "ActualAmountToPay", 
+        IFNULL(P.Amount,0) AS "AmountPaid",
+		IFNULL(O.FullPaymentDiscountAmount,0) AS "FullPaymentDiscountAmount",
+        CASE WHEN IFNULL(O.FullPaymentDiscountAmount,0) = 0 THEN 'Instalment' 
+        ELSE 'Full Payment' END AS PaymentMethod,
+		IFNULL(O.ServiceTotalAmount,0) AS "ServiceTotalAmount", O.Order_Id, 
+        OD.Quantity
+    
+FROM prolongevity.adminpanel_customer C
+	LEFT JOIN prolongevity.adminpanel_order O ON C.Customer_Id = O.Customer_Id
+	LEFT JOIN prolongevity.adminpanel_orderdetails OD ON O.Order_Id = OD.Order_Id
+	LEFT JOIN prolongevity.adminpanel_payment P ON O.Order_Id = P.Order_Id
+	LEFT JOIN prolongevity.adminpanel_product PR ON OD.Product_Id = PR.Product_Id
+
+	WHERE O.IsOrderCompleted = 1 AND P.Amount > 0 AND O.ActualAmountToPay > 0 AND PR.Product_Id = id
+    ORDER BY O.Order_Id DESC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetOrderDetailsReportResult` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetOrderDetailsReportResult`()
+BEGIN
+	
+	SELECT  CONCAT(C.First_Name, ' ' ,C.Last_Name) as CustName, 
+		O.OrderCompletionDate AS "PurchaseDate",
+        IFNULL(O.ActualAmountToPay,0) AS "ActualAmountToPay", 
+        (SELECT  SUM(P.Amount) FROM prolongevity.adminpanel_payment P  where O.Order_Id = P.Order_Id) as AmountPaid,
+		IFNULL(O.FullPaymentDiscountAmount,0) AS "FullPaymentDiscountAmount",
+        CASE WHEN IFNULL(O.FullPaymentDiscountAmount,0) = 0 THEN 'Instalment' 
+        ELSE 'Full Payment' END AS PaymentMethod,
+		IFNULL(O.ServiceTotalAmount,0) AS "ServiceTotalAmount", O.Order_Id
+    
+	FROM prolongevity.adminpanel_customer C
+		LEFT JOIN prolongevity.adminpanel_order O ON C.Customer_Id = O.Customer_Id
+	WHERE O.IsOrderCompleted = 1 AND O.ActualAmountToPay > 0
+	ORDER BY O.Order_Id DESC;	
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetOrderDetailsSearchResult` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetOrderDetailsSearchResult`(IN fromDate date, IN toDate date)
+BEGIN
+	IF (toDate IS NULL) THEN
+	SELECT  CONCAT(C.First_Name, ' ' ,C.Last_Name) as CustName, 
+		O.OrderCompletionDate AS "PurchaseDate",
+        IFNULL(O.ActualAmountToPay,0) AS "ActualAmountToPay", 
+        (SELECT  SUM(P.Amount) FROM prolongevity.adminpanel_payment P  where O.Order_Id = P.Order_Id) as AmountPaid,
+		IFNULL(O.FullPaymentDiscountAmount,0) AS "FullPaymentDiscountAmount",
+        CASE WHEN IFNULL(O.FullPaymentDiscountAmount,0) = 0 THEN 'Instalment' 
+        ELSE 'Full Payment' END AS PaymentMethod,
+		IFNULL(O.ServiceTotalAmount,0) AS "ServiceTotalAmount", O.Order_Id
+    
+	FROM prolongevity.adminpanel_customer C
+		LEFT JOIN prolongevity.adminpanel_order O ON C.Customer_Id = O.Customer_Id
+	WHERE O.IsOrderCompleted = 1 AND O.ActualAmountToPay > 0
+		AND O.OrderCompletionDate >= fromDate
+	ORDER BY O.Order_Id DESC;	
+	else
+			SELECT  CONCAT(C.First_Name, ' ' ,C.Last_Name) as CustName, 
+		O.OrderCompletionDate AS "PurchaseDate",
+        IFNULL(O.ActualAmountToPay,0) AS "ActualAmountToPay", 
+        (SELECT  SUM(P.Amount) FROM prolongevity.adminpanel_payment P  where O.Order_Id = P.Order_Id) as AmountPaid,
+		IFNULL(O.FullPaymentDiscountAmount,0) AS "FullPaymentDiscountAmount",
+        CASE WHEN IFNULL(O.FullPaymentDiscountAmount,0) = 0 THEN 'Instalment' 
+        ELSE 'Full Payment' END AS PaymentMethod,
+		IFNULL(O.ServiceTotalAmount,0) AS "ServiceTotalAmount", O.Order_Id
+    
+	FROM prolongevity.adminpanel_customer C
+		LEFT JOIN prolongevity.adminpanel_order O ON C.Customer_Id = O.Customer_Id
+	WHERE O.IsOrderCompleted = 1 AND O.ActualAmountToPay > 0
+     AND (O.OrderCompletionDate >= fromDate AND O.OrderCompletionDate <= toDate)
+	ORDER BY O.Order_Id DESC;	
+    END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `GetPaymentOrderSummary` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -2202,6 +2461,41 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetPurchaseHistoryByCustomerId` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetPurchaseHistoryByCustomerId`(IN id int)
+BEGIN
+	SELECT distinct O.Order_Id,O.OrderCompletionDate, O.ActualAmountToPay, 
+			IFNULL(O.FullPaymentDiscountAmount,0) AS FullPaymentDiscountAmount,
+	
+    CASE WHEN FullPaymentDiscountAmount > 0 THEN 'Full Payment' 
+					ELSE 'Instalment Payment' END AS PaymentMethod,
+	CASE WHEN
+		(SELECT COUNT(Installment_Due_Id) FROM prolongevity.adminpanel_installmentdue 
+			WHERE Order_id = O.Order_Id AND IsInstalmentPaid = 0) > 0 
+	THEN 'Payment Pending'
+    ELSE 'Payment Completed' END AS PaymentStatus,
+    OS.OrderStatusType, OS.OrderStatusId
+    
+    FROM prolongevity.adminpanel_order O
+		LEFT JOIN prolongevity.adminpanel_payment P ON O.Order_Id = P.Order_Id
+        LEFT JOIN prolongevity.adminpanel_orderstatus OS ON O.OrderStatus_id = OS.OrderStatusId
+        WHERE O.Customer_Id = id AND O.ActualAmountToPay > 0
+        ORDER BY O.OrderCompletionDate DESC, O.Order_Id DESC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `GetReferralDiscountCode` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -2237,6 +2531,38 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetServiceDetails`()
 BEGIN
 	SELECT * FROM adminpanel_product WHERE IsProduct = 0;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetShippedOrders` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetShippedOrders`()
+BEGIN
+	SELECT O.Order_Id, O.Order_Date, O.OrderCompletionDate, 
+		CONCAT(C.First_Name, ' ' ,C.Last_Name) as CustName, O.OrderStatus_id AS OrderId,
+        OS.OrderStatusType, 
+        (SELECT GROUP_CONCAT(' ',P.Name) FROM adminpanel_orderdetails OD 
+			LEFT JOIN adminpanel_product P ON OD.Product_Id = P.Product_Id
+			WHERE O.Order_Id = OD.Order_Id
+		) AS Items, A.Postal_Code
+		
+        FROM prolongevity.adminpanel_order O
+			LEFT JOIN adminpanel_Customer C ON O.Customer_id = C.Customer_Id
+            LEFT JOIN adminpanel_OrderStatus OS ON O.OrderStatus_id = OS.OrderStatusId
+            LEFT JOIN adminpanel_address A ON C.user_id = A.User_Id AND A.Address_Type = 'B'
+		WHERE O.IsOrderCompleted = 1 AND (O.OrderStatus_id = 3)
+			ORDER BY O.OrderCompletionDate DESC, O.Order_Id DESC;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2496,6 +2822,34 @@ BEGIN
     INSERT INTO adminpanel_user_groups(user_id, group_id) 
     VALUES 
     (@userid, @groupid);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `InsertUpdateActivityLog` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertUpdateActivityLog`(
+	IN data nvarchar(20000), IN activityid int, IN userid int
+    )
+BEGIN
+		INSERT INTO adminpanel_activitylog
+		(
+			ActivityDescription, LogCreatedDate, ActivityType_id, User_id
+		) 
+		VALUES 
+		(
+			data, now(), activityid, userid
+		);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2898,4 +3252,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-10 12:16:53
+-- Dump completed on 2021-03-11 13:26:46
