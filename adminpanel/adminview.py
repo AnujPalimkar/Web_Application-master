@@ -981,8 +981,6 @@ def consultant_delete(request, id):
     cursor.callproc('DeleteConsultantUser',[id])
     return redirect('/consultantList')
 
-    return redirect('/ManageOrder')
-
 @login_required(login_url='Login')
 def viewCalendar(request):
     userId=request.user.id
